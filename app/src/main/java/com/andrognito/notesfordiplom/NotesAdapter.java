@@ -1,14 +1,19 @@
 package com.andrognito.notesfordiplom;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.List;
 
 
@@ -53,12 +58,28 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                note = notesList.get(position);
-                Toast.makeText(mContext, String.valueOf(note.getNoteTitle()), Toast.LENGTH_LONG).show();
-                NoteSaver noteSaver = new NoteSaver();
-                noteSaver.deleteNote(mContext, note);
-                notesList.remove(note);
-                notifyDataSetChanged();
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder
+                        .setIcon(R.drawable.ic_delete_sweep_white_24dp)
+                        .setMessage("Удалить заметку?")
+                        .setCancelable(false)
+                        .setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                note = notesList.get(position);
+                                NoteSaver noteSaver = new NoteSaver();
+                                noteSaver.deleteNote(mContext, note);
+                                notesList.remove(note);
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+
                 return false;
             }
         });

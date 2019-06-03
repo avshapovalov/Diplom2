@@ -1033,6 +1033,7 @@ drawable dot_filled
 drawable ic_add_white_24dp
 drawable ic_arrow_back_white_24dp
 drawable ic_backspace
+drawable ic_delete_sweep_white_24dp
 drawable ic_event_note_black_24dp
 drawable ic_launcher
 drawable ic_mtrl_chip_checked_black
