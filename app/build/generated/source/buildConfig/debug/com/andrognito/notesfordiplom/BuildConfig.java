@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package com.andrognito.pinlockviewapp;
+package com.andrognito.notesfordiplom;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");

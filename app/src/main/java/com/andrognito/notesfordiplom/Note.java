@@ -1,4 +1,4 @@
-package com.andrognito.pinlockviewapp;
+package com.andrognito.notesfordiplom;
 
 public class Note {
     private String noteTitle;

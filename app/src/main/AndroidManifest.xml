@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.andrognito.pinlockviewapp">
+    package="com.andrognito.notesfordiplom">
 
     <application
         android:allowBackup="true"
@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewNote"></activity>
-        <activity android:name=".Notes" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".PinCodeScreen">
+        <activity android:name="com.andrognito.notesfordiplom.NewNote"></activity>
+        <activity android:name="com.andrognito.notesfordiplom.Notes" />
+        <activity android:name="com.andrognito.notesfordiplom.SettingsActivity" />
+        <activity android:name="com.andrognito.notesfordiplom.PinCodeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

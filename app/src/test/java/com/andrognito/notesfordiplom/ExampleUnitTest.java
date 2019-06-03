@@ -1,4 +1,4 @@
-package com.andrognito.pinlockviewapp;
+package com.andrognito.notesfordiplom;
 
 import org.junit.Test;
 

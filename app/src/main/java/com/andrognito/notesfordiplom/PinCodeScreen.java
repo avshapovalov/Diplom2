@@ -1,4 +1,4 @@
-package com.andrognito.pinlockviewapp;
+package com.andrognito.notesfordiplom;
 
 import android.content.Intent;
 import android.os.Bundle;

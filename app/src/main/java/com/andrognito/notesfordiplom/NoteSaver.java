@@ -1,9 +1,7 @@
-package com.andrognito.pinlockviewapp;
+package com.andrognito.notesfordiplom;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import java.io.File;
