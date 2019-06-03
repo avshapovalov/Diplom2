@@ -55,4 +55,32 @@ public class NoteSaver {
         }
         return noteList;
     }
+
+    public void deleteNote(Context context, Note note) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(String.valueOf(note.getCreateDate().getTime()), MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(NoteSaver.FIELD_TITLE, note.getNoteTitle());
+        editor.putString(NoteSaver.FIELD_DESCRIPTION, note.getNoteDescription());
+        editor.putString(NoteSaver.FIELD_DEADLINE, note.getNoteTime());
+        editor.putLong(NoteSaver.FIELD_CREATIONDATE, note.getCreateDate().getTime());
+        editor.apply();
+        Toast.makeText(context, "Заметка сохранена", Toast.LENGTH_SHORT).show();
+    }
+
+    public void clearSharedPreferences(Context context) {
+        File dir = new File(context.getFilesDir().getParent() + "/shared_prefs/");
+        String[] children = dir.list();
+        for (int i = 0; i < children.length; i++) {
+            context.getSharedPreferences(children[i].replace(".xml", ""), Context.MODE_PRIVATE).edit().clear().commit();
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+        for (int i = 0; i < children.length; i++) {
+            // delete the files
+            new File(dir, children[i]).delete();
+        }
+    }
+
 }

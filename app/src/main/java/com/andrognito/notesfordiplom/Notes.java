@@ -1,5 +1,6 @@
 package com.andrognito.notesfordiplom;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,7 @@ public class Notes extends AppCompatActivity {
         notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
 
         notesView.setHasFixedSize(true);
-        notesAdapter = new NotesAdapter(noteList);
+        notesAdapter = new NotesAdapter(getApplicationContext(), noteList);
         notesView.setAdapter(notesAdapter);
         layoutManager = new LinearLayoutManager(this);
         notesView.setLayoutManager(layoutManager);
