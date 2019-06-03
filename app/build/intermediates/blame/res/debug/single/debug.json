@@ -648,10 +648,6 @@
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_notes_list_view.xml.flat",
-        "source": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\src\\main\\res\\layout\\notes_list_view.xml"
-    },
-    {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\bec019dd393389f20c577a851f459477\\res\\drawable-xhdpi-v4\\design_ic_visibility.png"
     },
@@ -1744,10 +1740,6 @@
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\bec019dd393389f20c577a851f459477\\res\\interpolator-v21\\mtrl_fast_out_linear_in.xml"
     },
     {
-        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v17_notes_list_view.xml.flat",
-        "source": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\src\\main\\res\\layout-v17\\notes_list_view.xml"
-    },
-    {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_edittext.xml.flat",
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\color-v23\\abc_tint_edittext.xml"
     },
@@ -1826,6 +1818,10 @@
     {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_note_list_view.xml.flat",
+        "source": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\src\\main\\res\\layout\\note_list_view.xml"
     },
     {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",

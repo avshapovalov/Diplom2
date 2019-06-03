@@ -83,22 +83,22 @@ MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\t
 		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:10:9-40
-activity#com.andrognito.pinlockviewapp.NewNote
-ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:11:9-54
+activity#com.andrognito.notesfordiplom.NewNote
+ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:11:9-83
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:11:19-42
-activity#com.andrognito.pinlockviewapp.Notes
-ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:12:9-43
+		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:11:19-71
+activity#com.andrognito.notesfordiplom.Notes
+ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:12:9-72
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:12:19-40
-activity#com.andrognito.pinlockviewapp.SettingsActivity
-ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:12:19-69
+activity#com.andrognito.notesfordiplom.SettingsActivity
+ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:13:9-83
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:13:19-51
-activity#com.andrognito.pinlockviewapp.PinCodeScreen
+		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:13:19-80
+activity#com.andrognito.notesfordiplom.PinCodeScreen
 ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:14:19-48
+		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:14:19-77
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN

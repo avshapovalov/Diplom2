@@ -1186,6 +1186,7 @@ id navigation_header_container
 id never
 id none
 id normal
+id noteDeadlineView
 id noteDescription
 id noteTitle
 id notesTooldbar
@@ -1270,7 +1271,6 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
-id timeView
 id title
 id titleDividerNoCustom
 id title_template
@@ -1360,7 +1360,7 @@ layout layout_delete_item
 layout layout_number_item
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
-layout notes_list_view
+layout note_list_view
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1418,6 +1418,7 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string dedline
 string descriptionExample
 string enter_description
 string enter_new_pin_text_view

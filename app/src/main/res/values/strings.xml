@@ -12,4 +12,5 @@
     <string name="enter_description">Введите описание</string>
     <string name="save_note">Сохранить заметку</string>
     <string name="notes">Заметки</string>
+    <string name="dedline">Крайний срок</string>
 </resources>

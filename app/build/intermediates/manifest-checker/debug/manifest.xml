@@ -17,10 +17,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.andrognito.pinlockviewapp.NewNote" />
-        <activity android:name="com.andrognito.pinlockviewapp.Notes" />
-        <activity android:name="com.andrognito.pinlockviewapp.SettingsActivity" />
-        <activity android:name="com.andrognito.pinlockviewapp.PinCodeScreen" >
+        <activity android:name="com.andrognito.notesfordiplom.NewNote" />
+        <activity android:name="com.andrognito.notesfordiplom.Notes" />
+        <activity android:name="com.andrognito.notesfordiplom.SettingsActivity" />
+        <activity android:name="com.andrognito.notesfordiplom.PinCodeScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
