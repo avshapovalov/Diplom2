@@ -67,19 +67,20 @@ public class NoteSaver {
         Toast.makeText(context, "Заметка сохранена", Toast.LENGTH_SHORT).show();
     }
 
-    public void clearSharedPreferences(Context context) {
-        File dir = new File(context.getFilesDir().getParent() + "/shared_prefs/");
+    public void clearSharedPreferences(Context mContext, Note note) {
+        File dir = new File(mContext.getFilesDir().getParent() + "/shared_prefs/");
         String[] children = dir.list();
+
         for (int i = 0; i < children.length; i++) {
-            context.getSharedPreferences(children[i].replace(".xml", ""), Context.MODE_PRIVATE).edit().clear().commit();
-        }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
+            if (mContext.getSharedPreferences(children[i].replace(".xml", ""),
+                    Context.MODE_PRIVATE).contains(String.valueOf(note.getCreateDate().getTime()))) {
+                mContext.getSharedPreferences(children[i].replace(".xml", ""), Context.MODE_PRIVATE).edit().clear().commit();
+            }
         }
         for (int i = 0; i < children.length; i++) {
-            // delete the files
-            new File(dir, children[i]).delete();
+            if (new File(dir, children[i]).getName().equals(note.getCreateDate().getTime() + ".xml")) {
+                new File(dir, children[i]).delete();
+            }
         }
     }
 
