@@ -28,7 +28,6 @@ public class Notes extends AppCompatActivity {
         noteList = new ArrayList<>();
         noteSaver = new NoteSaver();
         noteList = noteSaver.fillList(Notes.this);
-
         notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
 
         notesView.setHasFixedSize(true);

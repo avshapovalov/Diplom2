@@ -31,7 +31,11 @@ public class Note {
     }
 
     public String getNoteTime() {
-        return noteTime;
+        if (noteTime == null) {
+            return "";
+        } else {
+            return noteTime;
+        }
     }
 
     public void setNoteTime(String noteTime) {

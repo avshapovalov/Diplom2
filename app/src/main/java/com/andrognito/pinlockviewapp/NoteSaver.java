@@ -3,6 +3,7 @@ package com.andrognito.pinlockviewapp;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import java.io.File;
@@ -42,10 +43,12 @@ public class NoteSaver {
             for (int i = 0; i < list.length; i++) {
                 SharedPreferences sharedPref = context.getSharedPreferences(list[i].replace(".xml", ""), Context.MODE_PRIVATE);
                 Note note = new Note();
-                note.setNoteTitle(sharedPref.getString(NoteSaver.FIELD_TITLE, null));
-                note.setNoteDescription(sharedPref.getString(NoteSaver.FIELD_DESCRIPTION, null));
-                note.setNoteTime(sharedPref.getString(NoteSaver.FIELD_DEADLINE, null));
-                noteList.add(note);
+                note.setNoteTitle(sharedPref.getString(NoteSaver.FIELD_TITLE, "Unknown"));
+                note.setNoteDescription(sharedPref.getString(NoteSaver.FIELD_DESCRIPTION, ""));
+                note.setNoteTime(sharedPref.getString(NoteSaver.FIELD_DEADLINE, ""));
+                if (note.getNoteTitle().equals("Unknown") == false) {
+                    noteList.add(note);
+                }
             }
         }
         return noteList;
