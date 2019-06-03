@@ -1,20 +1,16 @@
 package com.andrognito.notesfordiplom;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.File;
 import java.util.List;
 
-import static android.content.Context.MODE_PRIVATE;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
     private List<Note> notesList;
@@ -32,11 +28,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             noteTitleForAdapter = (TextView) view.findViewById(R.id.noteTitle);
             noteDescriptionForAdapter = (TextView) view.findViewById(R.id.noteDescription);
             noteTimeForAdapter = (TextView) view.findViewById(R.id.noteDeadlineView);
+            itemView.setClickable(true);
         }
     }
 
     public NotesAdapter(List<Note> myDataset) {
-        this.notesList = myDataset;
+        notesList = myDataset;
     }
 
     @Override
@@ -46,33 +43,25 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NotesViewHolder notesViewHolder, int position) {
-        mContext = notesViewHolder.itemView.getContext();
+    public void onBindViewHolder(@NonNull NotesViewHolder holder, final int position) {
+        mContext = holder.itemView.getContext();
         note = notesList.get(position);
-        notesViewHolder.noteTitleForAdapter.setText(String.valueOf(note.getNoteTitle()));
-        notesViewHolder.noteDescriptionForAdapter.setText(String.valueOf(note.getNoteDescription()));
-        notesViewHolder.noteTimeForAdapter.setText(String.valueOf(note.getNoteTime()));
+        holder.noteTitleForAdapter.setText(String.valueOf(note.getNoteTitle()));
+        holder.noteDescriptionForAdapter.setText(String.valueOf(note.getNoteDescription()));
+        holder.noteTimeForAdapter.setText(String.valueOf(note.getNoteTime()));
 
-        notesViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                note = notesList.get(position);
+                Toast.makeText(mContext, String.valueOf(note.getNoteTitle()), Toast.LENGTH_LONG).show();
                 NoteSaver noteSaver = new NoteSaver();
-                noteSaver.clearSharedPreferences(mContext, note);
-
+                noteSaver.deleteNote(mContext, note);
                 notesList.remove(note);
                 notifyDataSetChanged();
                 return false;
             }
         });
-
-        notesViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                notifyDataSetChanged();
-            }
-        });
-
     }
 
     @Override
