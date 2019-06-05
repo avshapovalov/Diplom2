@@ -57,7 +57,6 @@ public class Notes extends AppCompatActivity {
         notesAdapter.notifyDataSetChanged();
     }
 
-
     View.OnClickListener onfloatingAddNoteButtonClickListener = v -> {
         switch (v.getId()) {
             case R.id.fab_add_note:

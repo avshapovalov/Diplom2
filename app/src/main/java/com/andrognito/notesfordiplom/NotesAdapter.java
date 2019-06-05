@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.List;
 
 
@@ -50,6 +51,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.noteTitleForAdapter.setText(String.valueOf(note.getNoteTitle()));
         holder.noteDescriptionForAdapter.setText(String.valueOf(note.getNoteDescription()));
         holder.noteTimeForAdapter.setText(String.valueOf(note.getNoteTime()));
+
+        if (String.valueOf(note.getNoteTitle()).isEmpty()) {
+            holder.noteTitleForAdapter.setVisibility(View.GONE);
+        }
+
+        if (String.valueOf(note.getNoteDescription()).isEmpty()) {
+            holder.noteDescriptionForAdapter.setVisibility(View.GONE);
+        }
+
+        if (String.valueOf(note.getNoteTime()).isEmpty()) {
+            holder.noteTimeForAdapter.setVisibility(View.GONE);
+        }
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

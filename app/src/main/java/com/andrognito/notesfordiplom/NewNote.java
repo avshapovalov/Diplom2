@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -74,13 +75,11 @@ public class NewNote extends AppCompatActivity {
         dayOfMonth = myCalendar.get(Calendar.DATE);
         pickDeadlineButton.setOnClickListener(onNewNoteClickListener);
         isDeadlineNeeded.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if(isChecked == false) {
+            if (isChecked == false) {
                 newNoteDeadline.setText("");
             }
         });
     }
-
-
 
     protected Dialog onCreateDialog(int id) {
         if (id == DIALOG_DATE) {
