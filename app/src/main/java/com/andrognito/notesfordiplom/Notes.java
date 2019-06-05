@@ -10,15 +10,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 
 public class Notes extends AppCompatActivity {
-    private static Comparator<Note> noteComparator = new NotesComparator();
     RecyclerView notesView;
     RecyclerView.Adapter notesAdapter;
     RecyclerView.LayoutManager layoutManager;
@@ -31,15 +27,13 @@ public class Notes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-
         noteList = new ArrayList<Note>();
         noteRepository = new NoteRepository();
         noteList = noteRepository.fillList(Notes.this);
         notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
         notesView.setHasFixedSize(true);
-        String myFormat = "dd.MM.yyyy";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        Collections.sort(noteList, noteComparator);
+        Collections.sort(noteList, new NotesComparator());
+        Collections.reverse(noteList);
         notesAdapter = new NotesAdapter(noteList);
         notesView.setAdapter(notesAdapter);
         layoutManager = new LinearLayoutManager(Notes.this);
@@ -57,7 +51,9 @@ public class Notes extends AppCompatActivity {
         super.onRestart();
         noteList.clear();
         noteList = noteRepository.fillList(Notes.this);
-        Collections.sort(noteList, noteComparator);
+        Collections.sort(noteList, new NotesComparator());
+        Collections.reverse(noteList);
+        notesAdapter = new NotesAdapter(noteList);
         notesAdapter.notifyDataSetChanged();
     }
 

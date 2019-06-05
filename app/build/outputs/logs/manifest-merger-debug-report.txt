@@ -78,7 +78,7 @@ MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\t
 	android:label
 		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:8:9-41
 	android:icon
-		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:7:9-45
+		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:7:9-54
 	android:allowBackup
 		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme

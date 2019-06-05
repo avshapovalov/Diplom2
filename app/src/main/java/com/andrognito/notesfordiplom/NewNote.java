@@ -48,6 +48,7 @@ public class NewNote extends AppCompatActivity {
         newNoteDeadline = (EditText) findViewById(R.id.edit_deadline_date);
         pickDeadlineButton = (ImageButton) findViewById(R.id.date_deadline_picker);
         isDeadlineNeeded = (CheckBox) findViewById(R.id.cbx_dedline_needed);
+
         if (getIntent().getStringExtra(NOTE_ID) != null) {
             actionType = 1;
             newNoteRepository = new NoteRepository();
@@ -121,16 +122,22 @@ public class NewNote extends AppCompatActivity {
             Date currentTime = Calendar.getInstance().getTime();
             newNote = new Note(newNoteTitle.getText().toString(),
                     newNoteDescription.getText().toString(),
-                    newNoteDeadline.getText().toString(), currentTime, Boolean.valueOf(isDeadlineNeeded.isChecked()));
+                    newNoteDeadline.getText().toString(),
+                    currentTime,
+                    currentTime,
+                    Boolean.valueOf(isDeadlineNeeded.isChecked()));
             try {
                 noteRepository.saveNote(NewNote.this, newNote);
             } catch (Exception e) {
                 Log.e("error", e.getMessage());
             }
         } else if (actionType == NoteRepository.ACTION_UPDATE) {
-            newNote = new Note(newNoteTitle.getText().toString(),
-                    newNoteDescription.getText().toString(),
-                    newNoteDeadline.getText().toString(), newNote.getCreateDate(), Boolean.valueOf(isDeadlineNeeded.isChecked()));
+            Date currentTime = Calendar.getInstance().getTime();
+            newNote.setNoteTitle(newNoteTitle.getText().toString());
+            newNote.setNoteDescription(newNoteDescription.getText().toString());
+            newNote.setNoteTime(newNoteDeadline.getText().toString());
+            newNote.setChangeDate(currentTime);
+            newNote.setDeadlineNeeded(Boolean.valueOf(isDeadlineNeeded.isChecked()));
             try {
                 noteRepository.updateNote(NewNote.this, newNote);
             } catch (Exception e) {
@@ -146,7 +153,7 @@ public class NewNote extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_save_note: //Your task
+            case R.id.action_save_note:
                 return true;
 
             default:

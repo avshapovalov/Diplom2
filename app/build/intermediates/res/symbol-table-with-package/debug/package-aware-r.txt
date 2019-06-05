@@ -1036,6 +1036,7 @@ drawable ic_backspace
 drawable ic_delete_sweep_white_24dp
 drawable ic_event_note_black_24dp
 drawable ic_launcher
+drawable ic_launcher_background
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1375,6 +1376,8 @@ layout support_simple_spinner_dropdown_item
 menu menu_new_note_toolbar
 menu menu_notes_list
 mipmap ic_launcher
+mipmap ic_launcher_foreground
+mipmap ic_launcher_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

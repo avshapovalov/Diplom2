@@ -6,15 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 
@@ -90,7 +85,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             public void onClick(View v) {
                 note = notesList.get(position);
                 Intent intent = new Intent(mContext, NewNote.class);
-                intent.putExtra(NewNote.NOTE_ID, String.valueOf(note.getCreateDate().getTime()));
+                intent.putExtra(NewNote.NOTE_ID, String.valueOf(note.getCreationDate().getTime()));
                 mContext.startActivity(intent);
             }
         });

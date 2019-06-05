@@ -9,17 +9,19 @@ public class Note {
     private String noteTitle;
     private String noteDescription;
     private String noteTime;
-    private Date createDate;
+    private Date creationDate;
+    private Date changeDate;
     private Boolean isDeadlineNeeded;
 
     public Note() {
     }
 
-    public Note(String noteTitle, String noteDescription, String noteTime, Date createDate, Boolean isDeadlineNeeded) {
+    public Note(String noteTitle, String noteDescription, String noteTime, Date creationDate, Date changeDate, Boolean isDeadlineNeeded) {
         this.noteTitle = noteTitle;
         this.noteDescription = noteDescription;
         this.noteTime = noteTime;
-        this.createDate = createDate;
+        this.creationDate = creationDate;
+        this.changeDate = changeDate;
         this.isDeadlineNeeded = isDeadlineNeeded;
     }
 
@@ -27,47 +29,46 @@ public class Note {
         return noteTitle;
     }
 
-    @NonNull
     public void setNoteTitle(String noteTitle) {
         this.noteTitle = noteTitle;
     }
 
-    @Nullable
     public String getNoteDescription() {
         return noteDescription;
     }
 
-    @Nullable
     public void setNoteDescription(String noteDescription) {
         this.noteDescription = noteDescription;
     }
 
-    @Nullable
     public String getNoteTime() {
         return noteTime;
     }
 
-    @Nullable
     public void setNoteTime(String noteTime) {
         this.noteTime = noteTime;
     }
 
-    @NonNull
-    public Date getCreateDate() {
-        return createDate;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    @NonNull
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
-    @NonNull
+    public Date getChangeDate() {
+        return changeDate;
+    }
+
+    public void setChangeDate(Date changeDate) {
+        this.changeDate = changeDate;
+    }
+
     public Boolean getDeadlineNeeded() {
         return isDeadlineNeeded;
     }
 
-    @NonNull
     public void setDeadlineNeeded(Boolean deadlineNeeded) {
         isDeadlineNeeded = deadlineNeeded;
     }
@@ -78,7 +79,8 @@ public class Note {
                 "noteTitle='" + noteTitle + '\'' +
                 ", noteDescription='" + noteDescription + '\'' +
                 ", noteTime='" + noteTime + '\'' +
-                ", createDate=" + createDate +
+                ", creationDate=" + creationDate +
+                ", changeDate=" + changeDate +
                 ", isDeadlineNeeded=" + isDeadlineNeeded +
                 '}';
     }
