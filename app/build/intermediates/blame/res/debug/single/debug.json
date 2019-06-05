@@ -1844,12 +1844,12 @@
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
-        "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_note_list_view.xml.flat",
         "source": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\src\\main\\res\\layout\\note_list_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
+        "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",

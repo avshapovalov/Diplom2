@@ -3,17 +3,18 @@ package com.andrognito.notesfordiplom;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -66,8 +67,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                         .setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 note = notesList.get(position);
-                                NoteSaver noteSaver = new NoteSaver();
-                                noteSaver.deleteNote(mContext, note);
+                                NoteRepository noteRepository = new NoteRepository();
+                                noteRepository.deleteNote(mContext, note);
                                 notesList.remove(note);
                                 notifyDataSetChanged();
                             }
@@ -81,6 +82,16 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                 alert.show();
 
                 return false;
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                note = notesList.get(position);
+                Intent intent = new Intent(mContext, NewNote.class);
+                intent.putExtra(NewNote.NOTE_ID, String.valueOf(note.getCreateDate().getTime()));
+                mContext.startActivity(intent);
             }
         });
     }

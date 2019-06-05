@@ -45,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void savePin(View view) {
-        PinSaver pinSaver = new PinSaver();
-        pinSaver.savePin(this, Integer.parseInt(pinText.getText().toString()));
+        Keystore keystore = new Keystore();
+        keystore.savePin(this, Integer.parseInt(pinText.getText().toString()));
     }
 }

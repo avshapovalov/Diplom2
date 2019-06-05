@@ -1,6 +1,7 @@
 package com.andrognito.notesfordiplom;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -24,9 +25,18 @@ public class NewNote extends AppCompatActivity {
     private EditText newNoteDeadline;
     private CheckBox isDeadlineNeeded;
     private ImageButton pickDeadlineButton;
+    Toolbar createNoteToolbar;
     private Note newNote;
-    private String strDeadlineDate;
     private Calendar myCalendar;
+    private DatePickerDialog.OnDateSetListener date;
+    private int DIALOG_DATE = 1;
+    private int year;
+    private int monthOfYear;
+    private int dayOfMonth;
+    public static final String NOTE_ID = "NOTE_ID";
+    private int actionType = 0;
+    private String noteID;
+    private NoteRepository newNoteRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,49 +47,67 @@ public class NewNote extends AppCompatActivity {
         newNoteDescription = (EditText) findViewById(R.id.edit_note_description);
         newNoteDeadline = (EditText) findViewById(R.id.edit_deadline_date);
         pickDeadlineButton = (ImageButton) findViewById(R.id.date_deadline_picker);
-        isDeadlineNeeded = findViewById(R.id.cbx_dedline_needed);
+        isDeadlineNeeded = (CheckBox) findViewById(R.id.cbx_dedline_needed);
+        if (getIntent().getStringExtra(NOTE_ID) != null) {
+            actionType = 1;
+            newNoteRepository = new NoteRepository();
+            noteID = getIntent().getStringExtra(NOTE_ID);
+            newNote = newNoteRepository.getNote(NewNote.this, noteID);
+            newNoteTitle.setText(newNote.getNoteTitle());
+            newNoteDescription.setText(newNote.getNoteDescription());
+            newNoteDeadline.setText(String.valueOf(newNote.getNoteTime()));
+            isDeadlineNeeded.setChecked(newNote.getDeadlineNeeded().booleanValue());
+        }
 
-        Toolbar createNoteToolbar = (Toolbar) findViewById(R.id.createNoteToolbar);
+        createNoteToolbar = (Toolbar) findViewById(R.id.createNoteToolbar);
         setSupportActionBar(createNoteToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        createNoteToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        createNoteToolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         myCalendar = Calendar.getInstance();
-
-        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                // TODO Auto-generated method stub
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
-            }
-
-        };
-
-        pickDeadlineButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                new DatePickerDialog(NewNote.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+        year = myCalendar.get(Calendar.YEAR);
+        monthOfYear = myCalendar.get(Calendar.MONTH);
+        dayOfMonth = myCalendar.get(Calendar.DATE);
+        pickDeadlineButton.setOnClickListener(onNewNoteClickListener);
+        isDeadlineNeeded.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(isChecked == false) {
+                newNoteDeadline.setText("");
             }
         });
-
     }
+
+
+
+    protected Dialog onCreateDialog(int id) {
+        if (id == DIALOG_DATE) {
+            DatePickerDialog tpd = new DatePickerDialog(this, onDateSetListener, year, monthOfYear, dayOfMonth);
+            return tpd;
+        }
+        return super.onCreateDialog(id);
+    }
+
+    DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        }
+    };
+
+    View.OnClickListener onNewNoteClickListener = v -> {
+        switch (v.getId()) {
+            case R.id.date_deadline_picker:
+                showDialog(DIALOG_DATE);
+                break;
+        }
+    };
 
     private void updateLabel() {
         String myFormat = "dd.MM.yyyy";
@@ -88,15 +116,26 @@ public class NewNote extends AppCompatActivity {
     }
 
     public void saveNote(MenuItem item) {
-        Date currentTime = Calendar.getInstance().getTime();
-        newNote = new Note(newNoteTitle.getText().toString(),
-                newNoteDescription.getText().toString(),
-                newNoteDeadline.getText().toString(), currentTime);
-        try {
-            NoteSaver noteSaver = new NoteSaver();
-            noteSaver.saveNote(NewNote.this, newNote);
-        } catch (Exception e) {
-            Log.e("error", e.getMessage());
+        NoteRepository noteRepository = new NoteRepository();
+        if (actionType == NoteRepository.ACTION_NEW_NOTE) {
+            Date currentTime = Calendar.getInstance().getTime();
+            newNote = new Note(newNoteTitle.getText().toString(),
+                    newNoteDescription.getText().toString(),
+                    newNoteDeadline.getText().toString(), currentTime, Boolean.valueOf(isDeadlineNeeded.isChecked()));
+            try {
+                noteRepository.saveNote(NewNote.this, newNote);
+            } catch (Exception e) {
+                Log.e("error", e.getMessage());
+            }
+        } else if (actionType == NoteRepository.ACTION_UPDATE) {
+            newNote = new Note(newNoteTitle.getText().toString(),
+                    newNoteDescription.getText().toString(),
+                    newNoteDeadline.getText().toString(), newNote.getCreateDate(), Boolean.valueOf(isDeadlineNeeded.isChecked()));
+            try {
+                noteRepository.updateNote(NewNote.this, newNote);
+            } catch (Exception e) {
+                Log.e("error", e.getMessage());
+            }
         }
     }
 

@@ -22,8 +22,8 @@ public class PinCodeScreen extends AppCompatActivity {
         @Override
         public void onComplete(String pin) {
 
-            PinSaver pinSaver = new PinSaver();
-            pinCode = pinSaver.getPin(PinCodeScreen.this);
+            Keystore keystore = new Keystore();
+            pinCode = keystore.getPin(PinCodeScreen.this);
             Log.d(TAG, "Pin complete: " + pin);
 
             if (Integer.parseInt(pin) == pinCode) {
