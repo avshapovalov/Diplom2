@@ -133,7 +133,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_delete_sweep_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_sort_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -145,7 +145,7 @@
                           <map>
                             <entry key="autoMirrored" value="true" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_delete_sweep_white_24dp" />
+                            <entry key="outputName" value="ic_sort_white_24dp" />
                             <entry key="sourceFile" value="C:\Users\Shapovalov" />
                           </map>
                         </option>

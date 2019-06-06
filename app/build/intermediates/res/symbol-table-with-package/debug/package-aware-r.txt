@@ -1046,6 +1046,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_save_black_24dp
 drawable ic_save_white_24dp
 drawable ic_settings_white_24dp
+drawable ic_sort_white_24dp
 drawable ic_visibility_black_24dp
 drawable ic_visibility_off_black_24dp
 drawable img_no_avatar
@@ -1092,7 +1093,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_save_note
-id action_settings
+id action_sort
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1100,6 +1101,7 @@ id add
 id alertTitle
 id all
 id always
+id ascending_sort
 id async
 id auto
 id barrier
@@ -1139,6 +1141,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id discending_sort
 id edit_deadline_date
 id edit_note_description
 id edit_note_title
@@ -1423,10 +1426,12 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
+string ascendingSort
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
 string dedline
+string descendingSort
 string descriptionExample
 string enter_description
 string enter_new_pin_text_view
@@ -1447,6 +1452,7 @@ string save_pin
 string search_menu_title
 string settings
 string show_pin_hint
+string sort
 string status_bar_notification_info_overflow
 string timeExample
 string titleExample

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,41 +29,13 @@ public class Notes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-        noteList = new ArrayList<Note>();
-        noteRepository = new NoteRepository();
-        noteList = noteRepository.fillList(Notes.this);
-        notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
-        notesView.setHasFixedSize(true);
-        Collections.sort(noteList, new NotesComparator());
-        Collections.reverse(noteList);
-        notesAdapter = new NotesAdapter(noteList);
-        notesView.setAdapter(notesAdapter);
-        layoutManager = new LinearLayoutManager(Notes.this);
-        notesView.setLayoutManager(layoutManager);
-        notesToolbar = (Toolbar) findViewById(R.id.notesTooldbar);
-        setSupportActionBar(notesToolbar);
-        FloatingActionButton floatingAddNoteButton = findViewById(R.id.fab_add_note);
-        floatingAddNoteButton.setOnClickListener(onfloatingAddNoteButtonClickListener);
+        setUpNotesList();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        noteList = new ArrayList<Note>();
-        noteRepository = new NoteRepository();
-        noteList = noteRepository.fillList(Notes.this);
-        notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
-        notesView.setHasFixedSize(true);
-        Collections.sort(noteList, new NotesComparator());
-        Collections.reverse(noteList);
-        notesAdapter = new NotesAdapter(noteList);
-        notesView.setAdapter(notesAdapter);
-        layoutManager = new LinearLayoutManager(Notes.this);
-        notesView.setLayoutManager(layoutManager);
-        notesToolbar = (Toolbar) findViewById(R.id.notesTooldbar);
-        setSupportActionBar(notesToolbar);
-        FloatingActionButton floatingAddNoteButton = findViewById(R.id.fab_add_note);
-        floatingAddNoteButton.setOnClickListener(onfloatingAddNoteButtonClickListener);
+        setUpNotesList();
     }
 
     View.OnClickListener onfloatingAddNoteButtonClickListener = v -> {
@@ -73,4 +47,48 @@ public class Notes extends AppCompatActivity {
         }
     };
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_notes_list, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.ascending_sort:
+                item.setChecked(true);
+                Collections.sort(noteList, new NotesComparator());
+                Collections.reverse(noteList);
+                notesAdapter = new NotesAdapter(noteList);
+                notesView.setAdapter(notesAdapter);
+                notesAdapter.notifyDataSetChanged();
+                return true;
+            case R.id.discending_sort:
+                item.setChecked(true);
+                Collections.sort(noteList, new NotesComparator());
+                notesAdapter = new NotesAdapter(noteList);
+                notesView.setAdapter(notesAdapter);
+                notesAdapter.notifyDataSetChanged();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void setUpNotesList() {
+        noteList = new ArrayList<Note>();
+        noteRepository = new NoteRepository();
+        noteList = noteRepository.fillList(Notes.this);
+        notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
+        notesView.setHasFixedSize(true);
+        Collections.sort(noteList, new NotesComparator());
+        Collections.reverse(noteList);
+        notesAdapter = new NotesAdapter(noteList);
+        notesView.setAdapter(notesAdapter);
+        layoutManager = new LinearLayoutManager(Notes.this);
+        notesView.setLayoutManager(layoutManager);
+        notesToolbar = (Toolbar) findViewById(R.id.notesTooldbar);
+        setSupportActionBar(notesToolbar);
+        FloatingActionButton floatingAddNoteButton = findViewById(R.id.fab_add_note);
+        floatingAddNoteButton.setOnClickListener(onfloatingAddNoteButtonClickListener);
+    }
 }
