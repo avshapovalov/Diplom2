@@ -29,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent notesIntent = new Intent(SettingsActivity.this, Notes.class);
+                Intent notesIntent = new Intent(SettingsActivity.this, PinCodeScreen.class);
                 startActivity(notesIntent);
                 return true;
             default:
