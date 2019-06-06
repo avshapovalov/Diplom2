@@ -2,6 +2,7 @@ package com.andrognito.notesfordiplom;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
@@ -21,7 +22,7 @@ public class NoteRepository {
     public static final String FIELD_CREATIONDATE = "creationDate";
     public static final String FIELD_CHANGEDATE = "changeDate";
     public static final String FIELD_IS_DEADLINE_NEEDED = "isDeadlineNeeded";
-
+    public static final String TAG = "СМОТРИ СЮДА";
     private ArrayList<Note> noteList = new ArrayList<Note>();
 
     public NoteRepository() {
@@ -37,6 +38,12 @@ public class NoteRepository {
         editor.putLong(NoteRepository.FIELD_CHANGEDATE, note.getChangeDate().getTime());
         editor.putBoolean(NoteRepository.FIELD_IS_DEADLINE_NEEDED, note.getDeadlineNeeded());
         editor.apply();
+        Log.d(TAG, String.valueOf(note.getNoteTitle()));
+        Log.d(TAG, String.valueOf(note.getNoteDescription()));
+        Log.d(TAG, String.valueOf(note.getNoteTime()));
+        Log.d(TAG, String.valueOf(note.getCreationDate().getTime()));
+        Log.d(TAG, String.valueOf(note.getChangeDate().getTime()));
+        Log.d(TAG, String.valueOf(note.getDeadlineNeeded()));
         Toast.makeText(context, "Заметка сохранена", Toast.LENGTH_SHORT).show();
     }
 
@@ -54,6 +61,12 @@ public class NoteRepository {
                 note.setCreationDate(new Date(sharedPref.getLong(NoteRepository.FIELD_CREATIONDATE, 0)));
                 note.setChangeDate(new Date(sharedPref.getLong(NoteRepository.FIELD_CHANGEDATE, 0)));
                 note.setDeadlineNeeded(sharedPref.getBoolean(NoteRepository.FIELD_IS_DEADLINE_NEEDED, false));
+                Log.d(TAG, String.valueOf(note.getNoteTitle()));
+                Log.d(TAG, String.valueOf(note.getNoteDescription()));
+                Log.d(TAG, String.valueOf(note.getNoteTime()));
+                Log.d(TAG, String.valueOf(note.getCreationDate().getTime()));
+                Log.d(TAG, String.valueOf(note.getChangeDate().getTime()));
+                Log.d(TAG, String.valueOf(note.getDeadlineNeeded()));
                 if (note.getNoteTitle().equals("Unknown") == false) {
                     noteList.add(note);
                 }
@@ -93,6 +106,12 @@ public class NoteRepository {
                 note.setCreationDate(new Date(sharedPref.getLong(NoteRepository.FIELD_CREATIONDATE, 0)));
                 note.setChangeDate(new Date(sharedPref.getLong(NoteRepository.FIELD_CHANGEDATE, 0)));
                 note.setDeadlineNeeded(sharedPref.getBoolean(NoteRepository.FIELD_IS_DEADLINE_NEEDED, false));
+                Log.d(TAG, String.valueOf(note.getNoteTitle()));
+                Log.d(TAG, String.valueOf(note.getNoteDescription()));
+                Log.d(TAG, String.valueOf(note.getNoteTime()));
+                Log.d(TAG, String.valueOf(note.getCreationDate().getTime()));
+                Log.d(TAG, String.valueOf(note.getChangeDate().getTime()));
+                Log.d(TAG, String.valueOf(note.getDeadlineNeeded()));
             }
         }
         return note;
@@ -113,7 +132,13 @@ public class NoteRepository {
                 editor.putLong(NoteRepository.FIELD_CREATIONDATE, note.getCreationDate().getTime());
                 editor.putLong(NoteRepository.FIELD_CHANGEDATE, note.getChangeDate().getTime());
                 editor.putBoolean(NoteRepository.FIELD_IS_DEADLINE_NEEDED, note.getDeadlineNeeded());
-                editor.commit();
+                editor.apply();
+                Log.d(TAG, String.valueOf(note.getNoteTitle()));
+                Log.d(TAG, String.valueOf(note.getNoteDescription()));
+                Log.d(TAG, String.valueOf(note.getNoteTime()));
+                Log.d(TAG, String.valueOf(note.getCreationDate().getTime()));
+                Log.d(TAG, String.valueOf(note.getChangeDate().getTime()));
+                Log.d(TAG, String.valueOf(note.getDeadlineNeeded()));
                 Toast.makeText(noteEditContext, "Заметка обновлена", Toast.LENGTH_SHORT).show();
             }
         }

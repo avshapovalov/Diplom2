@@ -1,4 +1,4 @@
-#Thu Jun 06 00:51:12 MSK 2019
+#Thu Jun 06 22:12:04 MSK 2019
 base.0=C\:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
 path.0=classes.dex
 renamed.0=classes.dex

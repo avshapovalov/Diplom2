@@ -38,10 +38,8 @@ public class Notes extends AppCompatActivity {
         notesView.setAdapter(notesAdapter);
         layoutManager = new LinearLayoutManager(Notes.this);
         notesView.setLayoutManager(layoutManager);
-
         notesToolbar = (Toolbar) findViewById(R.id.notesTooldbar);
         setSupportActionBar(notesToolbar);
-
         FloatingActionButton floatingAddNoteButton = findViewById(R.id.fab_add_note);
         floatingAddNoteButton.setOnClickListener(onfloatingAddNoteButtonClickListener);
     }
@@ -49,12 +47,21 @@ public class Notes extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        noteList.clear();
+        noteList = new ArrayList<Note>();
+        noteRepository = new NoteRepository();
         noteList = noteRepository.fillList(Notes.this);
+        notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
+        notesView.setHasFixedSize(true);
         Collections.sort(noteList, new NotesComparator());
         Collections.reverse(noteList);
         notesAdapter = new NotesAdapter(noteList);
-        notesAdapter.notifyDataSetChanged();
+        notesView.setAdapter(notesAdapter);
+        layoutManager = new LinearLayoutManager(Notes.this);
+        notesView.setLayoutManager(layoutManager);
+        notesToolbar = (Toolbar) findViewById(R.id.notesTooldbar);
+        setSupportActionBar(notesToolbar);
+        FloatingActionButton floatingAddNoteButton = findViewById(R.id.fab_add_note);
+        floatingAddNoteButton.setOnClickListener(onfloatingAddNoteButtonClickListener);
     }
 
     View.OnClickListener onfloatingAddNoteButtonClickListener = v -> {
@@ -66,12 +73,4 @@ public class Notes extends AppCompatActivity {
         }
     };
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent startMain = new Intent(Intent.ACTION_MAIN);
-        startMain.addCategory(Intent.CATEGORY_HOME);
-        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(startMain);
-    }
 }

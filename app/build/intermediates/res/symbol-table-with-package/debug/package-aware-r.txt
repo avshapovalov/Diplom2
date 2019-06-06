@@ -622,8 +622,11 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorGreen
+color colorOrange
 color colorPrimary
 color colorPrimaryDark
+color colorRed
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -1206,6 +1209,7 @@ id percent
 id pin
 id pin_edit
 id pin_lock_view
+id priorityLevel
 id profile_image
 id profile_name
 id progress_circular

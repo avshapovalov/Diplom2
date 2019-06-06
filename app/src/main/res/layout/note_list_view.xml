@@ -1,57 +1,71 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
     android:padding="4dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_weight="1"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/cardviewLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/noteTitle"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/priorityLevel"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardviewLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:typeface="sans"
-                android:textSize="20dp"
-                android:fontFamily="@font/rubikmedium"
-                tools:text="@string/titleExample"/>
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/noteDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="3"
-                android:textSize="16dp"
-                android:fontFamily="@font/rubiklight"
-                tools:text="@string/descriptionExample"
-                />
+                <TextView
+                    android:id="@+id/noteTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/rubikmedium"
+                    android:maxLines="1"
+                    android:textSize="20dp"
+                    android:typeface="sans"
+                    tools:text="@string/titleExample" />
 
-            <TextView
-                android:id="@+id/noteDeadlineView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:layout_gravity="right"
-                android:textSize="16dp"
-                android:fontFamily="@font/rubiklight"
-                />
+                <TextView
+                    android:id="@+id/noteDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/rubiklight"
+                    android:maxLines="3"
+                    android:textSize="16dp"
+                    tools:text="@string/descriptionExample" />
+
+                <TextView
+                    android:id="@+id/noteDeadlineView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/rubiklight"
+                    android:textSize="16dp" />
+            </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

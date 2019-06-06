@@ -4,19 +4,24 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
-
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
     private List<Note> notesList;
-    private int noteID;
     private Note note;
     private Context mContext;
 
@@ -24,12 +29,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         private TextView noteTitleForAdapter;
         private TextView noteDescriptionForAdapter;
         private TextView noteTimeForAdapter;
+        private ImageButton priorityLevel;
 
-        public NotesViewHolder(@NonNull View view) {
+        public NotesViewHolder(View view) {
             super(view);
             noteTitleForAdapter = (TextView) view.findViewById(R.id.noteTitle);
             noteDescriptionForAdapter = (TextView) view.findViewById(R.id.noteDescription);
             noteTimeForAdapter = (TextView) view.findViewById(R.id.noteDeadlineView);
+            priorityLevel = (ImageButton) view.findViewById(R.id.priorityLevel);
             itemView.setClickable(true);
         }
     }
@@ -52,18 +59,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.noteDescriptionForAdapter.setText(String.valueOf(note.getNoteDescription()));
         holder.noteTimeForAdapter.setText(String.valueOf(note.getNoteTime()));
 
-        if (String.valueOf(note.getNoteTitle()).isEmpty()) {
-            holder.noteTitleForAdapter.setVisibility(View.GONE);
-        }
-
-        if (String.valueOf(note.getNoteDescription()).isEmpty()) {
-            holder.noteDescriptionForAdapter.setVisibility(View.GONE);
-        }
-
-        if (String.valueOf(note.getNoteTime()).isEmpty()) {
-            holder.noteTimeForAdapter.setVisibility(View.GONE);
-        }
-
+        hideLabels(holder);
+        setLevelColor(holder);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -109,4 +106,40 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         return notesList.size();
     }
 
+    private void setLevelColor(NotesViewHolder holder) {
+        DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+        try {
+            Date deadlineDate = formatter.parse(note.getNoteTime());
+            int difference =
+                    ((int) ((deadlineDate.getTime() / (24 * 60 * 60 * 1000))
+                            - (int) (Calendar.getInstance().getTime().getTime() / (24 * 60 * 60 * 1000))));
+
+            if (difference <= 5 && difference > 0) {
+                holder.priorityLevel.setBackgroundColor(Color.parseColor("#ED7500"));
+            } else if (difference < 0) {
+                holder.priorityLevel.setBackgroundColor(Color.parseColor("#E53935"));
+            } else {
+                holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
+            }
+
+        } catch (ParseException e) {
+            holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
+            e.printStackTrace();
+        }
+    }
+
+    private void hideLabels (NotesViewHolder holder) {
+        if (String.valueOf(note.getNoteTitle()).isEmpty()) {
+            holder.noteTitleForAdapter.setVisibility(View.GONE);
+        }
+
+        if (String.valueOf(note.getNoteDescription()).isEmpty()) {
+            holder.noteDescriptionForAdapter.setVisibility(View.GONE);
+        }
+
+        if (String.valueOf(note.getNoteTime()).isEmpty()) {
+            holder.noteTimeForAdapter.setVisibility(View.GONE);
+        }
+
+    }
 }
