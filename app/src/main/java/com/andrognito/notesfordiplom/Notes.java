@@ -15,12 +15,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class Notes extends AppCompatActivity {
-    RecyclerView notesView;
-    RecyclerView.Adapter notesAdapter;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView notesView;
+    private RecyclerView.Adapter notesAdapter;
+    private RecyclerView.LayoutManager layoutManager;
     private Toolbar notesToolbar;
     private List<Note> noteList;
-    NoteRepository noteRepository;
+    private NoteRepository noteRepository;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override

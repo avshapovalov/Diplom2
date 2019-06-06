@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class SettingsActivity extends AppCompatActivity {
-    EditText pinText;
+    private EditText pinText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -18,6 +18,7 @@ public class PinCodeScreen extends AppCompatActivity {
     private PinLockView mPinLockView;
     private IndicatorDots mIndicatorDots;
     private int pinCode;
+
     private PinLockListener mPinLockListener = new PinLockListener() {
         @Override
         public void onComplete(String pin) {

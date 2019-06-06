@@ -26,7 +26,7 @@ public class NewNote extends AppCompatActivity {
     private EditText newNoteDeadline;
     private CheckBox isDeadlineNeeded;
     private ImageButton pickDeadlineButton;
-    Toolbar createNoteToolbar;
+    private Toolbar createNoteToolbar;
     private Note newNote;
     private Calendar myCalendar;
     private DatePickerDialog.OnDateSetListener date;

@@ -1,8 +1,5 @@
 package com.andrognito.notesfordiplom;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
 import java.util.Date;
 
 public class Note {
