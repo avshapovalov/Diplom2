@@ -95,7 +95,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             public void onClick(View v) {
                 note = notesList.get(position);
                 Intent intent = new Intent(mContext, NewNote.class);
-                intent.putExtra(NewNote.NOTE_ID, String.valueOf(note.getCreationDate().getTime()));
+                intent.putExtra(NewNote.NOTE_ID, note);
                 mContext.startActivity(intent);
             }
         });
@@ -103,7 +103,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
     @Override
     public int getItemCount() {
-        return notesList.size();
+        try {
+            return notesList.size();
+        }catch (NullPointerException e){
+
+        }
+        return 0;
     }
 
     private void setLevelColor(NotesViewHolder holder) {
@@ -114,7 +119,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                     ((int) ((deadlineDate.getTime() / (24 * 60 * 60 * 1000))
                             - (int) (Calendar.getInstance().getTime().getTime() / (24 * 60 * 60 * 1000))));
 
-            if (difference <= 5 && difference > 0) {
+            if (difference <= 5 && difference >= 0) {
                 holder.priorityLevel.setBackgroundColor(Color.parseColor("#ED7500"));
             } else if (difference < 0) {
                 holder.priorityLevel.setBackgroundColor(Color.parseColor("#E53935"));
@@ -123,6 +128,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             }
 
         } catch (ParseException e) {
+            holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
             holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
             e.printStackTrace();
         }

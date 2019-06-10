@@ -29,14 +29,12 @@ public class NewNote extends AppCompatActivity {
     private Toolbar createNoteToolbar;
     private Note newNote;
     private Calendar myCalendar;
-    private DatePickerDialog.OnDateSetListener date;
     private int DIALOG_DATE = 1;
     private int year;
     private int monthOfYear;
     private int dayOfMonth;
     public static final String NOTE_ID = "NOTE_ID";
     private int actionType = 0;
-    private String noteID;
     private NoteRepository newNoteRepository;
 
     @Override
@@ -50,11 +48,11 @@ public class NewNote extends AppCompatActivity {
         pickDeadlineButton = (ImageButton) findViewById(R.id.date_deadline_picker);
         isDeadlineNeeded = (CheckBox) findViewById(R.id.cbx_dedline_needed);
 
-        if (getIntent().getStringExtra(NOTE_ID) != null) {
+        if (getIntent().hasExtra(NOTE_ID)){
+            newNote = getIntent().getParcelableExtra(NOTE_ID);
             actionType = 1;
             newNoteRepository = new NoteRepository();
-            noteID = getIntent().getStringExtra(NOTE_ID);
-            newNote = newNoteRepository.getNote(NewNote.this, noteID);
+            newNote = getIntent().getParcelableExtra(NOTE_ID);
             newNoteTitle.setText(newNote.getNoteTitle());
             newNoteDescription.setText(newNote.getNoteDescription());
             newNoteDeadline.setText(String.valueOf(newNote.getNoteTime()));
@@ -122,8 +120,8 @@ public class NewNote extends AppCompatActivity {
             newNote = new Note(newNoteTitle.getText().toString(),
                     newNoteDescription.getText().toString(),
                     newNoteDeadline.getText().toString(),
-                    currentTime,
-                    currentTime,
+                    currentTime.getTime(),
+                    currentTime.getTime(),
                     Boolean.valueOf(isDeadlineNeeded.isChecked()));
             try {
                 noteRepository.saveNote(NewNote.this, newNote);
@@ -135,7 +133,7 @@ public class NewNote extends AppCompatActivity {
             newNote.setNoteTitle(newNoteTitle.getText().toString());
             newNote.setNoteDescription(newNoteDescription.getText().toString());
             newNote.setNoteTime(newNoteDeadline.getText().toString());
-            newNote.setChangeDate(currentTime);
+            newNote.setChangeDate(currentTime.getTime());
             newNote.setDeadlineNeeded(Boolean.valueOf(isDeadlineNeeded.isChecked()));
             try {
                 noteRepository.updateNote(NewNote.this, newNote);
@@ -159,5 +157,4 @@ public class NewNote extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

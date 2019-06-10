@@ -1,25 +1,36 @@
 package com.andrognito.notesfordiplom;
 
-import java.util.Date;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Note {
+public class Note implements Parcelable {
+
     private String noteTitle;
     private String noteDescription;
     private String noteTime;
-    private Date creationDate;
-    private Date changeDate;
+    private Long creationDate;
+    private Long changeDate;
     private Boolean isDeadlineNeeded;
 
     public Note() {
     }
 
-    public Note(String noteTitle, String noteDescription, String noteTime, Date creationDate, Date changeDate, Boolean isDeadlineNeeded) {
+    public Note(String noteTitle, String noteDescription, String noteTime, Long creationDate, Long changeDate, Boolean isDeadlineNeeded) {
         this.noteTitle = noteTitle;
         this.noteDescription = noteDescription;
         this.noteTime = noteTime;
         this.creationDate = creationDate;
         this.changeDate = changeDate;
         this.isDeadlineNeeded = isDeadlineNeeded;
+    }
+
+    public Note(Parcel in) {
+        this.noteTitle = in.readString();
+        this.noteDescription = in.readString();
+        this.noteTime = in.readString();
+        this.creationDate = in.readLong();
+        this.changeDate = in.readLong();
+        this.isDeadlineNeeded = Boolean.parseBoolean(in.readString());
     }
 
     public String getNoteTitle() {
@@ -46,19 +57,19 @@ public class Note {
         this.noteTime = noteTime;
     }
 
-    public Date getCreationDate() {
+    public Long getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(Long creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Date getChangeDate() {
+    public Long getChangeDate() {
         return changeDate;
     }
 
-    public void setChangeDate(Date changeDate) {
+    public void setChangeDate(Long changeDate) {
         this.changeDate = changeDate;
     }
 
@@ -72,13 +83,41 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note{" +
+        return "Note[" +
                 "noteTitle='" + noteTitle + '\'' +
                 ", noteDescription='" + noteDescription + '\'' +
                 ", noteTime='" + noteTime + '\'' +
                 ", creationDate=" + creationDate +
                 ", changeDate=" + changeDate +
                 ", isDeadlineNeeded=" + isDeadlineNeeded +
-                '}';
+                ']';
     }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeString(this.noteTitle);
+        parcel.writeString(this.noteDescription);
+        parcel.writeString(this.noteTime);
+        parcel.writeLong(this.creationDate);
+        parcel.writeLong(this.changeDate);
+        parcel.writeString(String.valueOf(this.isDeadlineNeeded));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Parcelable.Creator<Note> CREATOR = new Parcelable.Creator<Note>() {
+
+        @Override
+        public Note createFromParcel(Parcel source) {
+            return new Note(source);
+        }
+
+        @Override
+        public Note[] newArray(int size) {
+            return new Note[size];
+        }
+    };
 }

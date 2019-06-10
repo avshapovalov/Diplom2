@@ -1568,12 +1568,12 @@
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
         "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\bec019dd393389f20c577a851f459477\\res\\drawable-v21\\design_password_eye.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_event_note_black_24dp.png.flat",

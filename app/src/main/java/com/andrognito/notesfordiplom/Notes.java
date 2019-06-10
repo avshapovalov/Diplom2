@@ -12,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +36,7 @@ public class Notes extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         setUpNotesList();
+
     }
 
     View.OnClickListener onfloatingAddNoteButtonClickListener = v -> {
@@ -82,8 +82,14 @@ public class Notes extends AppCompatActivity {
         noteList = noteRepository.fillList(Notes.this);
         notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
         notesView.setHasFixedSize(true);
-        Collections.sort(noteList, new NotesComparator());
-        Collections.reverse(noteList);
+
+        try {
+            Collections.sort(noteList, new NotesComparator());
+            Collections.reverse(noteList);
+        } catch (NullPointerException e){
+
+        }
+
         notesAdapter = new NotesAdapter(noteList);
         notesView.setAdapter(notesAdapter);
         layoutManager = new LinearLayoutManager(Notes.this);
