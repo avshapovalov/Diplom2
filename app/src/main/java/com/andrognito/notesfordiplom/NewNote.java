@@ -19,6 +19,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import static com.andrognito.notesfordiplom.NoteRepository.ACTION_NEW_NOTE;
+import static com.andrognito.notesfordiplom.NoteRepository.ACTION_UPDATE;
+
 public class NewNote extends AppCompatActivity {
 
     private EditText newNoteTitle;
@@ -27,15 +30,15 @@ public class NewNote extends AppCompatActivity {
     private CheckBox isDeadlineNeeded;
     private ImageButton pickDeadlineButton;
     private Toolbar createNoteToolbar;
-    private Note newNote;
+    private Note newNote = new Note();
     private Calendar myCalendar;
     private int DIALOG_DATE = 1;
     private int year;
     private int monthOfYear;
     private int dayOfMonth;
     public static final String NOTE_ID = "NOTE_ID";
-    private int actionType = 0;
-    private NoteRepository newNoteRepository;
+    private int actionType = ACTION_NEW_NOTE;
+    private NoteRepository noteRepository = new NoteRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +51,8 @@ public class NewNote extends AppCompatActivity {
         pickDeadlineButton = (ImageButton) findViewById(R.id.date_deadline_picker);
         isDeadlineNeeded = (CheckBox) findViewById(R.id.cbx_dedline_needed);
 
-        if (getIntent().hasExtra(NOTE_ID)){
-            newNote = getIntent().getParcelableExtra(NOTE_ID);
+        if (getIntent().hasExtra(NOTE_ID)) {
             actionType = 1;
-            newNoteRepository = new NoteRepository();
             newNote = getIntent().getParcelableExtra(NOTE_ID);
             newNoteTitle.setText(newNote.getNoteTitle());
             newNoteDescription.setText(newNote.getNoteDescription());
@@ -114,32 +115,35 @@ public class NewNote extends AppCompatActivity {
     }
 
     public void saveNote(MenuItem item) {
-        NoteRepository noteRepository = new NoteRepository();
-        if (actionType == NoteRepository.ACTION_NEW_NOTE) {
-            Date currentTime = Calendar.getInstance().getTime();
-            newNote = new Note(newNoteTitle.getText().toString(),
-                    newNoteDescription.getText().toString(),
-                    newNoteDeadline.getText().toString(),
-                    currentTime.getTime(),
-                    currentTime.getTime(),
-                    Boolean.valueOf(isDeadlineNeeded.isChecked()));
-            try {
-                noteRepository.saveNote(NewNote.this, newNote);
-            } catch (Exception e) {
-                Log.e("error", e.getMessage());
-            }
-        } else if (actionType == NoteRepository.ACTION_UPDATE) {
-            Date currentTime = Calendar.getInstance().getTime();
-            newNote.setNoteTitle(newNoteTitle.getText().toString());
-            newNote.setNoteDescription(newNoteDescription.getText().toString());
-            newNote.setNoteTime(newNoteDeadline.getText().toString());
-            newNote.setChangeDate(currentTime.getTime());
-            newNote.setDeadlineNeeded(Boolean.valueOf(isDeadlineNeeded.isChecked()));
-            try {
-                noteRepository.updateNote(NewNote.this, newNote);
-            } catch (Exception e) {
-                Log.e("error", e.getMessage());
-            }
+        Date currentTime = Calendar.getInstance().getTime();
+        switch (actionType) {
+            case ACTION_NEW_NOTE:
+                newNote = new Note();
+                newNote.setNoteTitle(newNoteTitle.getText().toString());
+                newNote.setNoteDescription(newNoteDescription.getText().toString());
+                newNote.setNoteTime(newNoteDeadline.getText().toString());
+                newNote.setCreationDate(currentTime.getTime());
+                newNote.setChangeDate(currentTime.getTime());
+                newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
+                try {
+                    noteRepository.saveNote(NewNote.this, newNote);
+                } catch (NullPointerException e) {
+
+                }
+                break;
+            case ACTION_UPDATE:
+                newNote.setNoteTitle(newNoteTitle.getText().toString());
+                newNote.setNoteDescription(newNoteDescription.getText().toString());
+                newNote.setNoteTime(newNoteDeadline.getText().toString());
+                newNote.setChangeDate(currentTime.getTime());
+                newNote.setChangeDate(currentTime.getTime());
+                newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
+                try {
+                    noteRepository.saveNote(NewNote.this, newNote);
+                } catch (NullPointerException e) {
+
+                }
+                break;
         }
     }
 

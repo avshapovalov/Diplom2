@@ -58,7 +58,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.noteTitleForAdapter.setText(String.valueOf(note.getNoteTitle()));
         holder.noteDescriptionForAdapter.setText(String.valueOf(note.getNoteDescription()));
         holder.noteTimeForAdapter.setText(String.valueOf(note.getNoteTime()));
-
         hideLabels(holder);
         setLevelColor(holder);
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -73,7 +72,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                             public void onClick(DialogInterface dialog, int id) {
                                 note = notesList.get(position);
                                 NoteRepository noteRepository = new NoteRepository();
-                                noteRepository.deleteNote(mContext, note);
+                                noteRepository.deleteNote(mContext, note, NotesAdapter.this);
                                 notesList.remove(note);
                                 notifyDataSetChanged();
                             }
@@ -138,17 +137,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
     private void hideLabels (NotesViewHolder holder) {
-        if (String.valueOf(note.getNoteTitle()).isEmpty()) {
+        if (String.valueOf(holder.noteTitleForAdapter.getText()).isEmpty()) {
             holder.noteTitleForAdapter.setVisibility(View.GONE);
         }
 
-        if (String.valueOf(note.getNoteDescription()).isEmpty()) {
+        if (String.valueOf(holder.noteDescriptionForAdapter.getText()).isEmpty()) {
             holder.noteDescriptionForAdapter.setVisibility(View.GONE);
         }
 
-        if (String.valueOf(note.getNoteTime()).isEmpty()) {
+        if (String.valueOf(holder.noteTimeForAdapter.getText()).isEmpty()) {
             holder.noteTimeForAdapter.setVisibility(View.GONE);
         }
-
     }
+
 }

@@ -21,7 +21,7 @@ public class Notes extends AppCompatActivity {
     private RecyclerView.Adapter notesAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private Toolbar notesToolbar;
-    private List<Note> noteList;
+    private List<Note> noteList = new ArrayList<Note>();
     private NoteRepository noteRepository;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -36,7 +36,6 @@ public class Notes extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         setUpNotesList();
-
     }
 
     View.OnClickListener onfloatingAddNoteButtonClickListener = v -> {
@@ -77,7 +76,6 @@ public class Notes extends AppCompatActivity {
     }
 
     private void setUpNotesList() {
-        noteList = new ArrayList<Note>();
         noteRepository = new NoteRepository();
         noteList = noteRepository.fillList(Notes.this);
         notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
