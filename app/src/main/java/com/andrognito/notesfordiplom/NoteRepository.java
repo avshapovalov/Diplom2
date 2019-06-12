@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,8 @@ public class NoteRepository {
         SharedPreferences sharedPref = context.getSharedPreferences(JSON_REPOSITORY_NAME, Context.MODE_PRIVATE);
         String jsonPreferences = sharedPref.getString(JSON_REPOSITORY_KEY, "");
         Log.d(TAG, "jsonPreferences = " + jsonPreferences);
-        Type type = new TypeToken<List<Note>>() {}.getType();
+        Type type = new TypeToken<List<Note>>() {
+        }.getType();
         Log.d(TAG, "type = " + type);
         try {
             Log.d(TAG, "Начинаем заполнять список = ");
@@ -60,7 +63,7 @@ public class NoteRepository {
         return noteList;
     }
 
-    public void deleteNote(Context Context, Note note , NotesAdapter notesAdapter, int position) {
+    public void deleteNote(Context Context, Note note, NotesAdapter notesAdapter, int position) {
         noteList = fillList(Context);
         for (int i = 0; i < noteList.size(); i++) {
             if (noteList.get(i).getCreationDate().equals(note.getCreationDate())) {

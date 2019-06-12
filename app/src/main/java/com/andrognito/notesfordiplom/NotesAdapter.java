@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -107,7 +108,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     public int getItemCount() {
         try {
             return notesList.size();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
 
         }
         return 0;
@@ -132,14 +133,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         } catch (ParseException e) {
             holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
             e.printStackTrace();
-        }
-        catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
             e.printStackTrace();
         }
     }
 
-    private void hideLabels (NotesViewHolder holder) {
+    private void hideLabels(NotesViewHolder holder) {
         if (String.valueOf(holder.noteTitleForAdapter.getText()).isEmpty()) {
             holder.noteTitleForAdapter.setVisibility(View.GONE);
         }
