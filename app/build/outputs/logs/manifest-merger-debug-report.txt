@@ -4,13 +4,14 @@ ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidMa
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\bec019dd393389f20c577a851f459477\AndroidManifest.xml:17:1-24:12
 MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\PinLockView-master\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8d1df49e970cee12249b5a9a23c82682\AndroidManifest.xml:17:1-22:12
-MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\4e2d05c2793ed4a64ce117bb0dc7d226\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\24be09c1da9773af138deeff4bb9a6ac\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3257d67d229dcc17cbb84259aad1a623\AndroidManifest.xml:17:1-22:12
+MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\cdfd2da6e38b9ab72504f7dcb4ab4c31\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8303cc6a0e4d28d073f3cc7dcaa0c047\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\c569edaef646ddb44c1f2e1eee31cb11\AndroidManifest.xml:17:1-22:12
@@ -37,7 +38,6 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Shapovalov\.gradle
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\def4e714bc1d066497ccb90d73ee38d4\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\fceda6417cd78e815d3bf4d6e3de7163\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\e19aede48857ad9840d9f8467cafbcfb\AndroidManifest.xml:17:1-22:12
-MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:2:1-12:12
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:2:1-24:12
@@ -61,20 +61,20 @@ ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidMa
 		ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:4:22-78
 application
 ADDED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml:5:5-22:19
+MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:11:5-12:19
+MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\bec019dd393389f20c577a851f459477\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\bec019dd393389f20c577a851f459477\AndroidManifest.xml:22:5-20
 MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\PinLockView-master\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-53
 MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\PinLockView-master\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-53
-MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:11:5-12:19
-MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\24be09c1da9773af138deeff4bb9a6ac\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\24be09c1da9773af138deeff4bb9a6ac\AndroidManifest.xml:9:5-20
+MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:10:5-20
+MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:10:5-20
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\9a7ef25022c7d60623b209a179c4b2b9\AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\9a7ef25022c7d60623b209a179c4b2b9\AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\317d7836abe39f590c8cb040edd7b0d5\AndroidManifest.xml:22:5-23:19
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\317d7836abe39f590c8cb040edd7b0d5\AndroidManifest.xml:22:5-23:19
-MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:10:5-20
-MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:10:5-20
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\9a7ef25022c7d60623b209a179c4b2b9\AndroidManifest.xml:22:18-91
 	android:supportsRtl
@@ -117,20 +117,22 @@ uses-sdk
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml
+MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:7:5-9:41
+MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\bec019dd393389f20c577a851f459477\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\bec019dd393389f20c577a851f459477\AndroidManifest.xml:20:5-44
 MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\PinLockView-master\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\PinLockView-master\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8d1df49e970cee12249b5a9a23c82682\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8d1df49e970cee12249b5a9a23c82682\AndroidManifest.xml:20:5-44
-MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:7:5-9:41
-MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\7693abef6781fce6652f1105f64fb723\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\4e2d05c2793ed4a64ce117bb0dc7d226\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\4e2d05c2793ed4a64ce117bb0dc7d226\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\24be09c1da9773af138deeff4bb9a6ac\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\24be09c1da9773af138deeff4bb9a6ac\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3257d67d229dcc17cbb84259aad1a623\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3257d67d229dcc17cbb84259aad1a623\AndroidManifest.xml:20:5-44
+MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:6:5-8:41
+MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\cdfd2da6e38b9ab72504f7dcb4ab4c31\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\cdfd2da6e38b9ab72504f7dcb4ab4c31\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8303cc6a0e4d28d073f3cc7dcaa0c047\AndroidManifest.xml:20:5-44
@@ -183,8 +185,6 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Shapovalov\.gr
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\fceda6417cd78e815d3bf4d6e3de7163\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\e19aede48857ad9840d9f8467cafbcfb\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\e19aede48857ad9840d9f8467cafbcfb\AndroidManifest.xml:20:5-44
-MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:6:5-8:41
-MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\a7d740ba3dd4eaa54854ad8a1cbcbe26\AndroidManifest.xml:6:5-8:41
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Shapovalov\Desktop\PinLockView-master\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion

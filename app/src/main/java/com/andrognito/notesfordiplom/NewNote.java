@@ -5,7 +5,6 @@ import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +29,7 @@ public class NewNote extends AppCompatActivity {
     private CheckBox isDeadlineNeeded;
     private ImageButton pickDeadlineButton;
     private Toolbar createNoteToolbar;
-    private Note newNote = new Note();
+    private Note newNote;
     private Calendar myCalendar;
     private int DIALOG_DATE = 1;
     private int year;
@@ -92,7 +91,6 @@ public class NewNote extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
-            // TODO Auto-generated method stub
             myCalendar.set(Calendar.YEAR, year);
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -114,17 +112,16 @@ public class NewNote extends AppCompatActivity {
         newNoteDeadline.setText(sdf.format(myCalendar.getTime()));
     }
 
-    public void saveNote(MenuItem item) {
+    public void saveNewNote(MenuItem item) {
         Date currentTime = Calendar.getInstance().getTime();
         switch (actionType) {
             case ACTION_NEW_NOTE:
-                newNote = new Note();
-                newNote.setNoteTitle(newNoteTitle.getText().toString());
-                newNote.setNoteDescription(newNoteDescription.getText().toString());
-                newNote.setNoteTime(newNoteDeadline.getText().toString());
-                newNote.setCreationDate(currentTime.getTime());
-                newNote.setChangeDate(currentTime.getTime());
-                newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
+                newNote = new Note(newNoteTitle.getText().toString(),
+                        newNoteDescription.getText().toString(),
+                        newNoteDeadline.getText().toString(),
+                        currentTime.getTime(),
+                        currentTime.getTime(),
+                        isDeadlineNeeded.isChecked());
                 try {
                     noteRepository.saveNote(NewNote.this, newNote);
                 } catch (NullPointerException e) {
@@ -139,7 +136,7 @@ public class NewNote extends AppCompatActivity {
                 newNote.setChangeDate(currentTime.getTime());
                 newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
                 try {
-                    noteRepository.saveNote(NewNote.this, newNote);
+                    noteRepository.updateNote(NewNote.this, newNote);
                 } catch (NullPointerException e) {
 
                 }

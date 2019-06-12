@@ -12,13 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
     private List<Note> notesList;
@@ -72,9 +72,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                             public void onClick(DialogInterface dialog, int id) {
                                 note = notesList.get(position);
                                 NoteRepository noteRepository = new NoteRepository();
-                                noteRepository.deleteNote(mContext, note, NotesAdapter.this);
+                                noteRepository.deleteNote(mContext, note, NotesAdapter.this, position);
                                 notesList.remove(note);
-                                notifyDataSetChanged();
                             }
                         })
                         .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
@@ -92,7 +91,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                note = notesList.get(position);
+                if (notesList.size() == 1 && position == 1) {
+                    note = notesList.get(0);
+                } else {
+                    note = notesList.get(position);
+                }
                 Intent intent = new Intent(mContext, NewNote.class);
                 intent.putExtra(NewNote.NOTE_ID, note);
                 mContext.startActivity(intent);

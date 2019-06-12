@@ -77,7 +77,7 @@ public class Notes extends AppCompatActivity {
 
     private void setUpNotesList() {
         noteRepository = new NoteRepository();
-        noteList = noteRepository.fillList(Notes.this);
+        noteList = noteRepository.fillList(getApplicationContext());
         notesView = (RecyclerView) findViewById(R.id.notes_recycler_view);
         notesView.setHasFixedSize(true);
 

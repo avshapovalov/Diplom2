@@ -13,15 +13,7 @@ public class Note implements Parcelable {
     private Boolean isDeadlineNeeded;
 
     public Note() {
-    }
 
-    public Note(String noteTitle, String noteDescription, String noteTime, Long creationDate, Long changeDate, Boolean isDeadlineNeeded) {
-        this.noteTitle = noteTitle;
-        this.noteDescription = noteDescription;
-        this.noteTime = noteTime;
-        this.creationDate = creationDate;
-        this.changeDate = changeDate;
-        this.isDeadlineNeeded = isDeadlineNeeded;
     }
 
     public Note(Parcel in) {
@@ -31,6 +23,15 @@ public class Note implements Parcelable {
         this.creationDate = in.readLong();
         this.changeDate = in.readLong();
         this.isDeadlineNeeded = Boolean.parseBoolean(in.readString());
+    }
+
+    public Note(String noteTitle, String noteDescription, String noteTime, Long creationDate, Long changeDate, Boolean isDeadlineNeeded) {
+        this.noteTitle = noteTitle;
+        this.noteDescription = noteDescription;
+        this.noteTime = noteTime;
+        this.creationDate = creationDate;
+        this.changeDate = changeDate;
+        this.isDeadlineNeeded = isDeadlineNeeded;
     }
 
     public String getNoteTitle() {
