@@ -153,7 +153,6 @@ public class NewNote extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_save_note:
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
