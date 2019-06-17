@@ -2,6 +2,7 @@ package com.andrognito.notesfordiplom;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -127,6 +128,9 @@ public class NewNote extends AppCompatActivity {
                 } catch (NullPointerException e) {
 
                 }
+                Intent afterCreateIntent = new Intent(NewNote.this, Notes.class);
+                startActivity(afterCreateIntent);
+                finish();
                 break;
             case ACTION_UPDATE:
                 newNote.setNoteTitle(newNoteTitle.getText().toString());
@@ -140,6 +144,9 @@ public class NewNote extends AppCompatActivity {
                 } catch (NullPointerException e) {
 
                 }
+                Intent afterUpdateIntent = new Intent(NewNote.this, Notes.class);
+                startActivity(afterUpdateIntent);
+                finish();
                 break;
         }
     }
