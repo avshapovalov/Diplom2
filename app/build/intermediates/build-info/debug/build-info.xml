@@ -6,25 +6,25 @@
     density="560dpi"
     format="10"
     plugin-version="3.4.1"
-    timestamp="1560789925023"
+    timestamp="1561408796019"
     token="9183815256537976151"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="3329" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="742" />
     <task
         name="verifier"
-        duration="0" />
+        duration="80" />
 
     <artifact
-        location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -34,6 +34,9 @@
         type="SPLIT" />
     <artifact
         location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
         location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -57,18 +60,15 @@
         location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
         location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1560789925023"
+        timestamp="1561408796019"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -78,6 +78,9 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -99,9 +102,6 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Shapovalov\Desktop\PinLockView-master\app\build\intermediates\instant-run-apk\debug\app-debug.apk"

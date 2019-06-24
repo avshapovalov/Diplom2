@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -124,29 +125,39 @@ public class NewNote extends AppCompatActivity {
                         currentTime.getTime(),
                         isDeadlineNeeded.isChecked());
                 try {
-                    noteRepository.saveNote(NewNote.this, newNote);
+                    if (!newNote.getNoteTitle().isEmpty() || !newNote.getNoteDescription().isEmpty()) {
+                        noteRepository.saveNote(NewNote.this, newNote);
+                        super.onBackPressed();
+                        finish();
+                    } else {
+                        Toast.makeText(NewNote.this, "Требуется заполнить тему или описание", Toast.LENGTH_LONG).show();
+                    }
                 } catch (NullPointerException e) {
 
                 }
-                Intent afterCreateIntent = new Intent(NewNote.this, Notes.class);
-                startActivity(afterCreateIntent);
-                finish();
                 break;
             case ACTION_UPDATE:
-                newNote.setNoteTitle(newNoteTitle.getText().toString());
-                newNote.setNoteDescription(newNoteDescription.getText().toString());
-                newNote.setNoteTime(newNoteDeadline.getText().toString());
-                newNote.setChangeDate(currentTime.getTime());
-                newNote.setChangeDate(currentTime.getTime());
-                newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
-                try {
-                    noteRepository.updateNote(NewNote.this, newNote);
-                } catch (NullPointerException e) {
+                if (newNote.getNoteTitle().equals(newNoteTitle.getText().toString())
+                        && newNote.getNoteDescription().equals(newNoteDescription.getText().toString())
+                        && newNote.getNoteTime().equals(newNoteDeadline.getText().toString())
+                        && newNote.getDeadlineNeeded().equals(isDeadlineNeeded.isChecked())) {
+                    super.onBackPressed();
+                    finish();
+                } else {
+                    newNote.setNoteTitle(newNoteTitle.getText().toString());
+                    newNote.setNoteDescription(newNoteDescription.getText().toString());
+                    newNote.setNoteTime(newNoteDeadline.getText().toString());
+                    newNote.setChangeDate(currentTime.getTime());
+                    newNote.setChangeDate(currentTime.getTime());
+                    newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
+                    try {
+                        noteRepository.updateNote(NewNote.this, newNote);
+                    } catch (NullPointerException e) {
 
+                    }
+                    super.onBackPressed();
+                    finish();
                 }
-                Intent afterUpdateIntent = new Intent(NewNote.this, Notes.class);
-                startActivity(afterUpdateIntent);
-                finish();
                 break;
         }
     }

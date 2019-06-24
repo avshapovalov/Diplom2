@@ -30,9 +30,11 @@ public class PinCodeScreen extends AppCompatActivity {
             if (Integer.parseInt(pin) == pinCode) {
                 Intent notesIntent = new Intent(PinCodeScreen.this, Notes.class);
                 startActivity(notesIntent);
+                finish();
             } else {
                 Intent settingIntent = new Intent(PinCodeScreen.this, SettingsActivity.class);
                 startActivity(settingIntent);
+                finish();
             }
 
             Log.d(TAG, "Pin complete: " + pin);

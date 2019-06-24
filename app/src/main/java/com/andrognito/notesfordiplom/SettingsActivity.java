@@ -31,6 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
             case android.R.id.home:
                 Intent notesIntent = new Intent(SettingsActivity.this, PinCodeScreen.class);
                 startActivity(notesIntent);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
