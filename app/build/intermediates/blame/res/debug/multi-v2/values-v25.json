@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Shapovalov\\Desktop\\PinLockView-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "C:\\Users\\Shapovalov\\Desktop\\Diplom\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3257d67d229dcc17cbb84259aad1a623\\res\\values-v25\\values-v25.xml",
+                    "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\852671d6a5a7195945f4f3cbb48ae7e4\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

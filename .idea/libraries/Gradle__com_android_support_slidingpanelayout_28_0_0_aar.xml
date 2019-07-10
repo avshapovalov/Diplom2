@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.android.support:slidingpanelayout:28.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81a23f9356b4395b95f8f3ce2761b171/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81a23f9356b4395b95f8f3ce2761b171/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/803d3be7a9440e118d3e442a9d039cc7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/803d3be7a9440e118d3e442a9d039cc7/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

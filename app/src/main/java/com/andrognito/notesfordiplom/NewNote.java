@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -51,6 +52,11 @@ public class NewNote extends AppCompatActivity {
         newNoteDeadline = (EditText) findViewById(R.id.edit_deadline_date);
         pickDeadlineButton = (ImageButton) findViewById(R.id.date_deadline_picker);
         isDeadlineNeeded = (CheckBox) findViewById(R.id.cbx_dedline_needed);
+        newNoteTitle.requestFocus();
+
+        if (newNoteTitle.requestFocus()) {
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        }
 
         if (getIntent().hasExtra(NOTE_ID)) {
             actionType = 1;
@@ -126,9 +132,13 @@ public class NewNote extends AppCompatActivity {
                         isDeadlineNeeded.isChecked());
                 try {
                     if (!newNote.getNoteTitle().isEmpty() || !newNote.getNoteDescription().isEmpty()) {
-                        noteRepository.saveNote(NewNote.this, newNote);
-                        super.onBackPressed();
-                        finish();
+                        if (newNote.getDeadlineNeeded().booleanValue() == Boolean.TRUE && newNote.getNoteTime().isEmpty()) {
+                            newNoteDeadline.setError("Необходимо заполнить дедлайн!");
+                        } else {
+                            noteRepository.saveNote(NewNote.this, newNote);
+                            super.onBackPressed();
+                            finish();
+                        }
                     } else {
                         Toast.makeText(NewNote.this, "Требуется заполнить тему или описание", Toast.LENGTH_LONG).show();
                     }
@@ -144,19 +154,23 @@ public class NewNote extends AppCompatActivity {
                     super.onBackPressed();
                     finish();
                 } else {
-                    newNote.setNoteTitle(newNoteTitle.getText().toString());
-                    newNote.setNoteDescription(newNoteDescription.getText().toString());
-                    newNote.setNoteTime(newNoteDeadline.getText().toString());
-                    newNote.setChangeDate(currentTime.getTime());
-                    newNote.setChangeDate(currentTime.getTime());
-                    newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
-                    try {
-                        noteRepository.updateNote(NewNote.this, newNote);
-                    } catch (NullPointerException e) {
+                    if (isDeadlineNeeded.isChecked() == Boolean.TRUE && newNoteDeadline.getText().toString().isEmpty()) {
+                        newNoteDeadline.setError("Необходимо заполнить дедлайн!");
+                    } else {
+                        newNote.setNoteTitle(newNoteTitle.getText().toString());
+                        newNote.setNoteDescription(newNoteDescription.getText().toString());
+                        newNote.setNoteTime(newNoteDeadline.getText().toString());
+                        newNote.setChangeDate(currentTime.getTime());
+                        newNote.setChangeDate(currentTime.getTime());
+                        newNote.setDeadlineNeeded(isDeadlineNeeded.isChecked());
+                        try {
+                            noteRepository.updateNote(NewNote.this, newNote);
+                        } catch (NullPointerException e) {
 
+                        }
+                        super.onBackPressed();
+                        finish();
                     }
-                    super.onBackPressed();
-                    finish();
                 }
                 break;
         }
