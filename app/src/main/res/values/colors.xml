@@ -6,4 +6,5 @@
     <color name="colorRed">#E53935</color>
     <color name="colorOrange">#ED7500</color>
     <color name="colorGreen">#258E04</color>
+    <string name="pin_code_saved">Пин-код сохранен</string>
 </resources>

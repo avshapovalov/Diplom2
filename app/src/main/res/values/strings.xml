@@ -16,4 +16,24 @@
     <string name="sort">Сортировка</string>
     <string name="descendingSort">По-убыванию</string>
     <string name="ascendingSort">По-возрастанию</string>
+    <string name="delete_note_question">Удалить заметку?</string>
+    <string name="must_fill_deadline_error">Необходимо заполнить дедлайн!</string>
+    <string name="subject_or_description_required">Требуется заполнить тему или описание</string>
+    <string name="note_repository_note_log_equal">note = </string>
+    <string name="note_repository_note_list_log_equal">noteList = </string>
+    <string name="note_repository_json_equal">json =</string>
+    <string name="note_repository_saved">Сохранились</string>
+    <string name="note_repository_note_saved">Заметка сохранена</string>
+    <string name="note_repository_json_preferences">jsonPreferences =</string>
+    <string name="note_repository_type">type =</string>
+    <string name="note_repository_note_updated">Заметка обновлена</string>
+    <string name="note_repository_note_deleted">Заметка удалена</string>
+    <string name="note_repository_log_start_filling_list">Начинаем заполнять список =</string>
+    <string name="note_repository_log_noteList_equal">noteList =</string>
+    <string name="delete">Удалить</string>
+    <string name="reject">Отмена</string>
+    <string name="pin_code_screen_pin_complete">Pin complete:</string>
+    <string name="pin_code_screen_pin_empty">Pin empty</string>
+    <string name="pin_code_screen_pin_changed_new_length">Pin changed, new length</string>
+    <string name="pin_code_screen_with_intermediate_pin">with intermediate pin</string>
 </resources>

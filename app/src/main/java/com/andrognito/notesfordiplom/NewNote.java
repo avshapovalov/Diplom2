@@ -38,7 +38,7 @@ public class NewNote extends AppCompatActivity {
     private int year;
     private int monthOfYear;
     private int dayOfMonth;
-    public static final String NOTE_ID = "NOTE_ID";
+    public static final String NOTE_ID = Keys.NoteId.getKey();
     private int actionType = ACTION_NEW_NOTE;
     private NoteRepository noteRepository = new NoteRepository();
 
@@ -64,7 +64,7 @@ public class NewNote extends AppCompatActivity {
             newNoteTitle.setText(newNote.getNoteTitle());
             newNoteDescription.setText(newNote.getNoteDescription());
             newNoteDeadline.setText(String.valueOf(newNote.getNoteTime()));
-            isDeadlineNeeded.setChecked(newNote.getDeadlineNeeded().booleanValue());
+            isDeadlineNeeded.setChecked(newNote.getDeadlineNeeded());
         }
 
         createNoteToolbar = (Toolbar) findViewById(R.id.createNoteToolbar);
@@ -132,15 +132,15 @@ public class NewNote extends AppCompatActivity {
                         isDeadlineNeeded.isChecked());
                 try {
                     if (!newNote.getNoteTitle().isEmpty() || !newNote.getNoteDescription().isEmpty()) {
-                        if (newNote.getDeadlineNeeded().booleanValue() == Boolean.TRUE && newNote.getNoteTime().isEmpty()) {
-                            newNoteDeadline.setError("Необходимо заполнить дедлайн!");
+                        if (newNote.getDeadlineNeeded() == Boolean.TRUE && newNote.getNoteTime().isEmpty()) {
+                            newNoteDeadline.setError(getText(R.string.must_fill_deadline_error));
                         } else {
                             noteRepository.saveNote(NewNote.this, newNote);
                             super.onBackPressed();
                             finish();
                         }
                     } else {
-                        Toast.makeText(NewNote.this, "Требуется заполнить тему или описание", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NewNote.this, R.string.subject_or_description_required, Toast.LENGTH_LONG).show();
                     }
                 } catch (NullPointerException e) {
 
@@ -150,12 +150,12 @@ public class NewNote extends AppCompatActivity {
                 if (newNote.getNoteTitle().equals(newNoteTitle.getText().toString())
                         && newNote.getNoteDescription().equals(newNoteDescription.getText().toString())
                         && newNote.getNoteTime().equals(newNoteDeadline.getText().toString())
-                        && newNote.getDeadlineNeeded().equals(isDeadlineNeeded.isChecked())) {
+                        && newNote.getDeadlineNeeded()== isDeadlineNeeded.isChecked()) {
                     super.onBackPressed();
                     finish();
                 } else {
                     if (isDeadlineNeeded.isChecked() == Boolean.TRUE && newNoteDeadline.getText().toString().isEmpty()) {
-                        newNoteDeadline.setError("Необходимо заполнить дедлайн!");
+                        newNoteDeadline.setError(getText(R.string.must_fill_deadline_error));
                     } else {
                         newNote.setNoteTitle(newNoteTitle.getText().toString());
                         newNote.setNoteDescription(newNoteDescription.getText().toString());

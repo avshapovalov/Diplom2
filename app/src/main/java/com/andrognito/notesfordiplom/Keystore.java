@@ -15,16 +15,16 @@ public class Keystore {
     }
 
     public void savePin(Context context, int pin) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("secretDirectory", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(Keys.SecretDirectory.getKey(), MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("pin", pin);
+        editor.putInt(Keys.Pin.getKey(), pin);
         editor.apply();
-        Toast.makeText(context, "Пин-код сохранен", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,R.string.pin_code_saved, Toast.LENGTH_SHORT).show();
     }
 
     public int getPin(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("secretDirectory", MODE_PRIVATE);
-        int pinCode = sharedPreferences.getInt("pin", 0000);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(Keys.SecretDirectory.getKey(), MODE_PRIVATE);
+        int pinCode = sharedPreferences.getInt(Keys.Pin.getKey(), 0000);
         return pinCode;
     }
 }

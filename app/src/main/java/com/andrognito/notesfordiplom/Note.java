@@ -10,7 +10,7 @@ public class Note implements Parcelable {
     private String noteTime;
     private Long creationDate;
     private Long changeDate;
-    private Boolean isDeadlineNeeded;
+    private boolean isDeadlineNeeded;
 
     public Note() {
 
@@ -25,7 +25,7 @@ public class Note implements Parcelable {
         this.isDeadlineNeeded = Boolean.parseBoolean(in.readString());
     }
 
-    public Note(String noteTitle, String noteDescription, String noteTime, Long creationDate, Long changeDate, Boolean isDeadlineNeeded) {
+    public Note(String noteTitle, String noteDescription, String noteTime, Long creationDate, Long changeDate, boolean isDeadlineNeeded) {
         this.noteTitle = noteTitle;
         this.noteDescription = noteDescription;
         this.noteTime = noteTime;
@@ -74,11 +74,11 @@ public class Note implements Parcelable {
         this.changeDate = changeDate;
     }
 
-    public Boolean getDeadlineNeeded() {
+    public boolean getDeadlineNeeded() {
         return isDeadlineNeeded;
     }
 
-    public void setDeadlineNeeded(Boolean deadlineNeeded) {
+    public void setDeadlineNeeded(boolean deadlineNeeded) {
         isDeadlineNeeded = deadlineNeeded;
     }
 

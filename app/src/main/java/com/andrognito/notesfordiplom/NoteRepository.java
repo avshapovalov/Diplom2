@@ -18,45 +18,45 @@ public class NoteRepository {
 
     public static final int ACTION_NEW_NOTE = 0;
     public static final int ACTION_UPDATE = 1;
-    private static final String JSON_REPOSITORY_NAME = "noteRepository";
-    private static final String JSON_REPOSITORY_KEY = "noteRepository";
+    private static final String JSON_REPOSITORY_NAME = Keys.NoteRepository.getKey();
+    private static final String JSON_REPOSITORY_KEY = Keys.NoteRepository.getKey();
     private List<Note> noteList;
-    public static final String TAG = "LOG";
+    public static final String TAG = Keys.Log.getKey();
     private Gson gson;
 
     public NoteRepository() {
     }
 
     public void saveNote(Context context, Note note) {
-        Log.d(TAG, "note = " + note.toString());
+        Log.d(TAG, R.string.note_repository_note_log_equal + note.toString());
         noteList = fillList(context);
-        Log.d(TAG, "noteList = " + noteList.toString());
+        Log.d(TAG, R.string.note_repository_note_list_log_equal + noteList.toString());
         noteList.add(note);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(JSON_REPOSITORY_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         gson = new Gson();
         String json = gson.toJson(noteList);
-        Log.d(TAG, "json = " + json);
+        Log.d(TAG, R.string.note_repository_json_equal + json);
         editor.putString(JSON_REPOSITORY_KEY, json);
         editor.commit();
-        Log.d(TAG, "Сохранились");
-        Toast.makeText(context, "Заметка сохранена", Toast.LENGTH_LONG).show();
+        Log.d(TAG, String.valueOf(R.string.note_repository_saved));
+        Toast.makeText(context, R.string.note_repository_note_saved, Toast.LENGTH_LONG).show();
     }
 
     public List<Note> fillList(Context context) {
         gson = new Gson();
         SharedPreferences sharedPref = context.getSharedPreferences(JSON_REPOSITORY_NAME, Context.MODE_PRIVATE);
         String jsonPreferences = sharedPref.getString(JSON_REPOSITORY_KEY, "");
-        Log.d(TAG, "jsonPreferences = " + jsonPreferences);
+        Log.d(TAG, R.string.note_repository_json_preferences + jsonPreferences);
         Type type = new TypeToken<List<Note>>() {
         }.getType();
-        Log.d(TAG, "type = " + type);
+        Log.d(TAG, String.valueOf(R.string.note_repository_type) + type);
         try {
-            Log.d(TAG, "Начинаем заполнять список = ");
+            Log.d(TAG, String.valueOf(R.string.note_repository_log_start_filling_list));
             noteList = new ArrayList<>();
             noteList = gson.fromJson(jsonPreferences, type);
-            Log.d(TAG, "noteList = " + noteList.toString());
+            Log.d(TAG, R.string.note_repository_log_noteList_equal + noteList.toString());
         } catch (NullPointerException e) {
             noteList = new ArrayList<>();
         }
@@ -78,7 +78,7 @@ public class NoteRepository {
         editor.putString(JSON_REPOSITORY_KEY, json);
         editor.commit();
         notesAdapter.notifyItemRemoved(position);
-        Toast.makeText(Context, "Заметка удалена", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Context, R.string.note_repository_note_deleted, Toast.LENGTH_SHORT).show();
     }
 
     public void updateNote(Context context, Note note) {
@@ -100,7 +100,7 @@ public class NoteRepository {
         editor.putString(JSON_REPOSITORY_KEY, json);
         editor.commit();
 
-        Toast.makeText(context, "Заметка обновлена", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, R.string.note_repository_note_updated, Toast.LENGTH_SHORT).show();
     }
 
 }

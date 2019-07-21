@@ -39,6 +39,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             noteTimeForAdapter = (TextView) view.findViewById(R.id.noteDeadlineView);
             priorityLevel = (ImageButton) view.findViewById(R.id.priorityLevel);
             itemView.setClickable(true);
+
+
         }
     }
 
@@ -67,9 +69,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                 builder
                         .setIcon(R.drawable.ic_delete_sweep_white_24dp)
-                        .setMessage("Удалить заметку?")
+                        .setMessage(R.string.delete_note_question)
                         .setCancelable(false)
-                        .setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 note = notesList.get(position);
                                 NoteRepository noteRepository = new NoteRepository();
@@ -77,7 +79,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                                 notesList.remove(note);
                             }
                         })
-                        .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                             }
@@ -123,18 +125,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                             - (int) (Calendar.getInstance().getTime().getTime() / (24 * 60 * 60 * 1000))));
 
             if (difference <= 5 && difference >= 0) {
-                holder.priorityLevel.setBackgroundColor(Color.parseColor("#ED7500"));
+                holder.priorityLevel.setBackgroundColor(holder.itemView.getResources().getColor(R.color.colorOrange));
             } else if (difference < 0) {
-                holder.priorityLevel.setBackgroundColor(Color.parseColor("#E53935"));
+                holder.priorityLevel.setBackgroundColor(holder.itemView.getResources().getColor(R.color.colorRed));
             } else {
-                holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
+                holder.priorityLevel.setBackgroundColor(holder.itemView.getResources().getColor(R.color.colorGreen));
             }
 
         } catch (ParseException e) {
-            holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
+            holder.priorityLevel.setBackgroundColor(holder.itemView.getResources().getColor(R.color.colorGreen));
             e.printStackTrace();
         } catch (NullPointerException e) {
-            holder.priorityLevel.setBackgroundColor(Color.parseColor("#258E04"));
+            holder.priorityLevel.setBackgroundColor(holder.itemView.getResources().getColor(R.color.colorGreen));
             e.printStackTrace();
         }
     }

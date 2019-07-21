@@ -13,7 +13,7 @@ import com.andrognito.pinlockview.PinLockView;
 
 public class PinCodeScreen extends AppCompatActivity {
 
-    public static final String TAG = "PinLockView";
+    public static final String TAG = Keys.Log.getKey();
 
     private PinLockView mPinLockView;
     private IndicatorDots mIndicatorDots;
@@ -25,7 +25,7 @@ public class PinCodeScreen extends AppCompatActivity {
 
             Keystore keystore = new Keystore();
             pinCode = keystore.getPin(PinCodeScreen.this);
-            Log.d(TAG, "Pin complete: " + pin);
+            Log.d(TAG, R.string.pin_code_screen_pin_complete + pin);
 
             if (Integer.parseInt(pin) == pinCode) {
                 Intent notesIntent = new Intent(PinCodeScreen.this, Notes.class);
@@ -37,18 +37,18 @@ public class PinCodeScreen extends AppCompatActivity {
                 finish();
             }
 
-            Log.d(TAG, "Pin complete: " + pin);
+            Log.d(TAG, R.string.pin_code_screen_pin_complete + pin);
 
         }
 
         @Override
         public void onEmpty() {
-            Log.d(TAG, "Pin empty");
+            Log.d(TAG, getString(R.string.pin_code_screen_pin_empty));
         }
 
         @Override
         public void onPinChange(int pinLength, String intermediatePin) {
-            Log.d(TAG, "Pin changed, new length " + pinLength + " with intermediate pin " + intermediatePin);
+            Log.d(TAG, R.string.pin_code_screen_pin_changed_new_length + pinLength + R.string.pin_code_screen_with_intermediate_pin + intermediatePin);
         }
     };
 
