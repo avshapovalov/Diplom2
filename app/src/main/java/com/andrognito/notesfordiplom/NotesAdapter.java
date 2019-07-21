@@ -39,8 +39,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             noteTimeForAdapter = (TextView) view.findViewById(R.id.noteDeadlineView);
             priorityLevel = (ImageButton) view.findViewById(R.id.priorityLevel);
             itemView.setClickable(true);
-
-
         }
     }
 

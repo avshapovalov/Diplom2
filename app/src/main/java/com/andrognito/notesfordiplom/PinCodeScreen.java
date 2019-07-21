@@ -55,6 +55,16 @@ public class PinCodeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Keystore keystore = new Keystore();
+        pinCode = keystore.getPin(PinCodeScreen.this);
+
+        if (pinCode == 0) {
+            Intent settingIntent = new Intent(PinCodeScreen.this, SettingsActivity.class);
+            startActivity(settingIntent);
+            finish();
+        }
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
