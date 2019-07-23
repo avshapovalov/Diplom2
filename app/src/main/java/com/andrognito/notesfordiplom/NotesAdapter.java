@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,11 +25,16 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     private Note note;
     private Context mContext;
 
-    public static class NotesViewHolder extends RecyclerView.ViewHolder {
+    public static class NotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         private TextView noteTitleForAdapter;
         private TextView noteDescriptionForAdapter;
         private TextView noteTimeForAdapter;
         private ImageButton priorityLevel;
+        private List<Note> notesList;
+        private Note note;
+        private Context mContext;
+        private int position;
+        private NoteRepository noteRepository;
 
         public NotesViewHolder(View view) {
             super(view);
@@ -39,11 +43,62 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             noteTimeForAdapter = (TextView) view.findViewById(R.id.noteDeadlineView);
             priorityLevel = (ImageButton) view.findViewById(R.id.priorityLevel);
             itemView.setClickable(true);
+            itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
+            mContext = itemView.getContext();
+            noteRepository = new NoteRepository();
+            notesList = noteRepository.fillList(mContext);
+        }
+
+        @Override
+        public void onClick(View view) {
+            position = getAdapterPosition();
+            note = notesList.get(position);
+
+            if (notesList.size() == 1 && position == 1) {
+                note = notesList.get(0);
+            } else {
+                note = notesList.get(position);
+            }
+            Intent intent = new Intent(mContext, NewNote.class);
+            intent.putExtra(NewNote.NOTE_ID, note);
+            mContext.startActivity(intent);
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            position = getAdapterPosition();
+            note = notesList.get(position);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder
+                    .setIcon(R.drawable.ic_delete_sweep_white_24dp)
+                    .setMessage(R.string.delete_note_question)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            note = notesList.get(position);
+                            noteRepository.deleteNote(mContext, note, NotesAdapter.this, position);
+                            notesList.remove(note);
+                        }
+                    })
+                    .setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alert = builder.create();
+            alert.show();
+            return false;
         }
     }
 
     public NotesAdapter(List<Note> myDataset) {
         notesList = myDataset;
+    }
+
+    public NotesAdapter getNotesAdapter(){
+        return NotesAdapter.this;
     }
 
     @Override
@@ -61,47 +116,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.noteTimeForAdapter.setText(String.valueOf(note.getNoteTime()));
         hideLabels(holder);
         setLevelColor(holder);
-        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                builder
-                        .setIcon(R.drawable.ic_delete_sweep_white_24dp)
-                        .setMessage(R.string.delete_note_question)
-                        .setCancelable(false)
-                        .setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                note = notesList.get(position);
-                                NoteRepository noteRepository = new NoteRepository();
-                                noteRepository.deleteNote(mContext, note, NotesAdapter.this, position);
-                                notesList.remove(note);
-                            }
-                        })
-                        .setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.show();
-
-                return false;
-            }
-        });
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (notesList.size() == 1 && position == 1) {
-                    note = notesList.get(0);
-                } else {
-                    note = notesList.get(position);
-                }
-                Intent intent = new Intent(mContext, NewNote.class);
-                intent.putExtra(NewNote.NOTE_ID, note);
-                mContext.startActivity(intent);
-            }
-        });
     }
 
     @Override
