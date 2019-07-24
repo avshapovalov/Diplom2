@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -25,7 +26,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     private Note note;
     private Context mContext;
 
-    public static class NotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+    public class NotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         private TextView noteTitleForAdapter;
         private TextView noteDescriptionForAdapter;
         private TextView noteTimeForAdapter;
@@ -77,9 +78,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                     .setCancelable(false)
                     .setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            note = notesList.get(position);
-                            noteRepository.deleteNote(mContext, note, NotesAdapter.this, position);
-                            notesList.remove(note);
+                            noteRepository.deleteNote(mContext, note);
+                            removeItem(position);
                         }
                     })
                     .setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
@@ -89,7 +89,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                     });
             AlertDialog alert = builder.create();
             alert.show();
-            return false;
+            return true;
         }
     }
 
@@ -97,8 +97,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         notesList = myDataset;
     }
 
-    public NotesAdapter getNotesAdapter(){
-        return NotesAdapter.this;
+    public void removeItem(int position) {
+        notesList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, getItemCount() - position);
     }
 
     @Override

@@ -63,7 +63,7 @@ public class NoteRepository {
         return noteList;
     }
 
-    public void deleteNote(Context Context, Note note, NotesAdapter notesAdapter, int position) {
+    public void deleteNote(Context Context, Note note) {
         noteList = fillList(Context);
         for (int i = 0; i < noteList.size(); i++) {
             if (noteList.get(i).getCreationDate().equals(note.getCreationDate())) {
@@ -77,7 +77,6 @@ public class NoteRepository {
         String json = gson.toJson(noteList);
         editor.putString(JSON_REPOSITORY_KEY, json);
         editor.commit();
-        notesAdapter.notifyItemRemoved(position);
         Toast.makeText(Context, R.string.note_repository_note_deleted, Toast.LENGTH_SHORT).show();
     }
 
