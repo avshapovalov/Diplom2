@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,8 +15,10 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -28,7 +31,7 @@ public class NewNote extends AppCompatActivity {
 
     private EditText newNoteTitle;
     private EditText newNoteDescription;
-    private EditText newNoteDeadline;
+    private TextView newNoteDeadline;
     private CheckBox isDeadlineNeeded;
     private ImageButton pickDeadlineButton;
     private Toolbar createNoteToolbar;
@@ -49,7 +52,7 @@ public class NewNote extends AppCompatActivity {
 
         newNoteTitle = (EditText) findViewById(R.id.edit_note_title);
         newNoteDescription = (EditText) findViewById(R.id.edit_note_description);
-        newNoteDeadline = (EditText) findViewById(R.id.edit_deadline_date);
+        newNoteDeadline = (TextView) findViewById(R.id.edit_deadline_date);
         pickDeadlineButton = (ImageButton) findViewById(R.id.date_deadline_picker);
         isDeadlineNeeded = (CheckBox) findViewById(R.id.cbx_dedline_needed);
         newNoteTitle.requestFocus();
@@ -122,6 +125,7 @@ public class NewNote extends AppCompatActivity {
 
     public void saveNewNote(MenuItem item) {
         Date currentTime = Calendar.getInstance().getTime();
+
         switch (actionType) {
             case ACTION_NEW_NOTE:
                 newNote = new Note(newNoteTitle.getText().toString(),

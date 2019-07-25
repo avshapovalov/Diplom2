@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Shapovalov\\Desktop\\Diplom\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nb\\values-nb.xml",
+            "outputFile": "C:\\Users\\Shapovalov\\Desktop\\Diplom2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nb\\values-nb.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Shapovalov\\.gradle\\caches\\transforms-2\\files-2.1\\3881e69e624fa03ed0461fbd11a6a88b\\res\\values-nb\\values-nb.xml",

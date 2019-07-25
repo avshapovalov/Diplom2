@@ -12,7 +12,7 @@
     <string name="enter_description">Введите описание</string>
     <string name="save_note">Сохранить заметку</string>
     <string name="notes">Заметки</string>
-    <string name="dedline">Крайний срок</string>
+    <string name="dedline">Выберите дату крайнего срока-></string>
     <string name="sort">Сортировка</string>
     <string name="descendingSort">По-убыванию</string>
     <string name="ascendingSort">По-возрастанию</string>

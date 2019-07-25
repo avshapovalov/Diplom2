@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
 MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\dc5c81f778cffa2edc54c3a7c7146123\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3c01fc0558e697197d683eae407016d9\AndroidManifest.xml:17:1-24:12
-MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
+MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom2\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\5f5d740712c023e792096953b3a1c0f4\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8fe1855aee3aed8a29d307273dda3c7e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\423b2d5aa2e5af4cd037531083ad7393\AndroidManifest.xml:2:1-11:12
@@ -38,35 +38,35 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Shapovalov\.gradle
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8fc4cad166e5db1c02a0f8562142b148\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\afcf54946e42251bf3e61d8e84745fa8\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\d58a47088ceea2c25cbab74f229387e6\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
 	package
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:3:5-44
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:3:5-44
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.WRITE_INTERNAL_STORAGE
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:4:5-80
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:4:5-80
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:4:22-78
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:4:22-78
 application
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:5:5-22:19
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:5:5-22:19
 MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\dc5c81f778cffa2edc54c3a7c7146123\AndroidManifest.xml:11:5-12:19
 MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\dc5c81f778cffa2edc54c3a7c7146123\AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3c01fc0558e697197d683eae407016d9\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3c01fc0558e697197d683eae407016d9\AndroidManifest.xml:22:5-20
-MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-53
-MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-53
+MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom2\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-53
+MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom2\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-53
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\423b2d5aa2e5af4cd037531083ad7393\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\423b2d5aa2e5af4cd037531083ad7393\AndroidManifest.xml:9:5-20
 MERGED from [com.scottyab:aes-crypto:0.0.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\0e804549292f6137e263acfac906c440\AndroidManifest.xml:10:5-20
@@ -78,51 +78,51 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Shapovalov
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3881e69e624fa03ed0461fbd11a6a88b\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:9:9-35
 	android:label
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:8:9-41
 	android:icon
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:7:9-54
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:7:9-54
 	android:allowBackup
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:10:9-40
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:10:9-40
 activity#com.andrognito.notesfordiplom.NewNote
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:12:9-83
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:12:9-83
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:12:19-71
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:12:19-71
 activity#com.andrognito.notesfordiplom.Notes
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:13:9-72
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:13:9-72
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:13:19-69
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:13:19-69
 activity#com.andrognito.notesfordiplom.SettingsActivity
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:14:9-83
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:14:9-83
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:14:19-80
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:14:19-80
 activity#com.andrognito.notesfordiplom.PinCodeScreen
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:15:9-21:20
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:15:19-77
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:15:19-77
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml:19:27-74
 uses-sdk
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
 MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\dc5c81f778cffa2edc54c3a7c7146123\AndroidManifest.xml:7:5-9:41
 MERGED from [com.scottyab:secure-preferences-lib:0.1.4] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\dc5c81f778cffa2edc54c3a7c7146123\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3c01fc0558e697197d683eae407016d9\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\3c01fc0558e697197d683eae407016d9\AndroidManifest.xml:20:5-44
-MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom2\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:pinlockview] C:\Users\Shapovalov\Desktop\Diplom2\pinlockview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\5f5d740712c023e792096953b3a1c0f4\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\5f5d740712c023e792096953b3a1c0f4\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\8fe1855aee3aed8a29d307273dda3c7e\AndroidManifest.xml:20:5-44
@@ -185,13 +185,13 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Shapovalov\.gr
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\afcf54946e42251bf3e61d8e84745fa8\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\d58a47088ceea2c25cbab74f229387e6\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Shapovalov\.gradle\caches\transforms-2\files-2.1\d58a47088ceea2c25cbab74f229387e6\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Shapovalov\Desktop\Diplom\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Shapovalov\Desktop\Diplom2\app\src\main\AndroidManifest.xml
