@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -26,12 +25,15 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     private Note note;
     private Context mContext;
 
+    public NotesAdapter(List<Note> myDataset) {
+        notesList = myDataset;
+    }
+
     public class NotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         private TextView noteTitleForAdapter;
         private TextView noteDescriptionForAdapter;
         private TextView noteTimeForAdapter;
         private ImageButton priorityLevel;
-        private List<Note> notesList;
         private Note note;
         private Context mContext;
         private int position;
@@ -48,7 +50,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             itemView.setOnLongClickListener(this);
             mContext = itemView.getContext();
             noteRepository = new NoteRepository();
-            notesList = noteRepository.fillList(mContext);
         }
 
         @Override
@@ -93,14 +94,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         }
     }
 
-    public NotesAdapter(List<Note> myDataset) {
-        notesList = myDataset;
-    }
-
     public void removeItem(int position) {
         notesList.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, getItemCount() - position);
     }
 
     @Override
